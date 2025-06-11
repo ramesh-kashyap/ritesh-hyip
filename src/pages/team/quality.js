@@ -22,6 +22,7 @@ const Server = () => {
       days: 7,
       purchased: false,
       effectiveAmount: "30",
+      effectiveAmount: "30",
       tradeAmount:"30",
       maxtradeAmount:"100",
       TeamA: "0",
@@ -35,6 +36,8 @@ const Server = () => {
       text2: "To: 48",
       price: "vi2-CCAxt9OI",
       days: 15,
+      purchased: false,
+      effectiveAmount: "500",
       purchased: false,
       effectiveAmount: "500",
       tradeAmount:"500",
@@ -52,6 +55,8 @@ const Server = () => {
       days: 15,
       purchased: false,
       effectiveAmount: "2000",
+      purchased: false,
+      effectiveAmount: "2000",
       tradeAmount:"2000",
       maxtradeAmount:"5000",
       TeamA: "10",
@@ -67,6 +72,8 @@ const Server = () => {
       days: 15,
       purchased: false,
       effectiveAmount: "5000",
+      purchased: false,
+      effectiveAmount: "5000",
       tradeAmount:"5000",
       maxtradeAmount:"15000",
     TeamA: "15",
@@ -77,11 +84,13 @@ const Server = () => {
     useEffect(()=>{
         fetchvip();
       },[])
-   const handleBuyClick = async () => {
+   const handleBuyClick = async (slideData) => {
       try {
-         const response = await Api.get('/tradeOn');
+         const response = await Api.post('/quality', {
+         });
          if (response.data.success) {
             //  fetchwallet();
+            toast.success("trade successful", response.data.message);
             toast.success("trade successful", response.data.message);
             // console.log("Purchase successful");
          } else {
@@ -94,6 +103,37 @@ const Server = () => {
       }
    };
 
+const fetchvip = async () => {
+   try {
+      const response = await Api.get('/fetchvip');
+      console.log(response.data);
+
+      if (response.data?.success) {
+         setQualitys(response.data);
+         const serverData = response.data;
+         const updatedSlides = slides.map((slide) => {
+            const balanceOk = parseFloat(serverData.balance) >= parseFloat(slide.effectiveAmount);
+            const directOk = parseInt(serverData.directmembers) >= parseInt(slide.TeamA);
+            const teamB = parseInt(serverData.sponsor?.teamBCount || 0);
+            const teamC = parseInt(serverData.sponsor?.teamCCount || 0);
+            const totalTeamBC = teamB + teamC;
+            const teamOk = totalTeamBC >= parseInt(slide.TeamBC);
+            const isPurchased = balanceOk && directOk && teamOk;
+
+            return {
+               ...slide,
+               purchased: isPurchased,
+            };
+         });
+
+         setSlides(updatedSlides);
+      } else {
+         console.error("API did not return success");
+      }
+   } catch (error) {
+      console.error("Error fetching servers:", error);
+   }
+};
 const fetchvip = async () => {
    try {
       const response = await Api.get('/fetchvip');
@@ -180,17 +220,24 @@ const fetchvip = async () => {
                               experience and greater advantages
                            </uni-view>
                         </uni-view>
-                       
-
-                           <SmartTradeQuantization/>
-
-                                 
-                                                   
-
-
-  <uni-view data-v-7cdca4f6="" class="top-group" style={{ width:'max-content',margin:'0px auto',padding:'8px',marginTop: '10px' }}>
-   <span data-v-d32894b1="" class="text-$primary text-14px" style={{color:'#ffcd58'}}>Transaction Record &gt;&gt;</span>
-</uni-view>
+                        <uni-view data-v-7cdca4f6="" class="top-group" style={{ marginTop: '10px' }}>
+                           <uni-view
+                              data-v-7cdca4f6=""
+                              class="top-btn selected"
+                              // onClick={() => setActiveTab("running")}
+                              style={{width:"100%",
+                                 backgroundColor:
+                                    activeTab === "running"
+                                       ? "#ffc600"
+                                       : "rgb(255, 255, 255)",
+                                 color:
+                                    activeTab === "running" ? "#000" : "rgb(112, 112, 112)",
+                                 transition: "all 0.3s ease",
+                              }}
+                              onClick={() => handleBuyClick()}
+                           >
+                              Smart Trade Core Quantization
+                           </uni-view>
 
                        
                        
@@ -252,16 +299,20 @@ const fetchvip = async () => {
                                                             <uni-view class="card-footer">
                                                                <uni-button
                                                                   className={slide.purchased ? 'subscribe-button' : 'unsubscribe-button'}
+                                                                  className={slide.purchased ? 'subscribe-button' : 'unsubscribe-button'}
                                                                   style={{
                                                                      borderRadius: '70px',
                                                                      border: slide.purchased ? '1px solid #c3c3c3' : 'none',
-                                                                     backgroundColor: slide.purchased ? 'rgb(225 201 113)' : 'rgb(225 201 113)',
-                                                                     color: slide.purchased ? '#888' : '#000', // black text on cyan
+                                                                     backgroundColor: slide.purchased ? '#ffc600' : '#f0f0f0',
+                                                                     color: slide.purchased ? '#000' : '#888', // black text on cyan
                                                                      cursor: slide.purchased ? 'not-allowed' : 'pointer'
                                                                   }}
                                                                   // onClick={() => handleBuyClick(slide)}
                                                                   // disabled={slide.purchased}
+                                                                  // onClick={() => handleBuyClick(slide)}
+                                                                  // disabled={slide.purchased}
                                                                >
+                                                                  {slide.purchased ? "Achieved" : "Not Achieved"}
                                                                   {slide.purchased ? "Achieved" : "Not Achieved"}
                                                                </uni-button>
                                                             </uni-view>
@@ -300,6 +351,7 @@ const fetchvip = async () => {
                     <uni-view data-v-0f43bbff="" class="level">
                       {/* <img data-v-0f43bbff="" src="/static/img/TeamC.png" alt="" style={{filter: 'brightness(0.72) invert(0)'}}/> */}
                       Second Generation Valid Members</uni-view>
+                    <uni-view data-v-0f43bbff="" class="rate">{servers?.sponsor?.teamBCount || 0}</uni-view>
                     <uni-view data-v-0f43bbff="" class="rate">{servers?.sponsor?.teamBCount || 0}</uni-view>
                   </uni-view>
                   <uni-view data-v-0f43bbff="" class="layout">
