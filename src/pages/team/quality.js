@@ -174,10 +174,10 @@ const fetchvip = async () => {
                               class="top-btn selected"
                               // onClick={() => setActiveTab("running")}
                               style={{width:"100%",
-                                 backgroundColor:
+                                 background:
                                     activeTab === "running"
-                                       ? "#ffc600"
-                                       : "rgb(255, 255, 255)",
+                                       ? "linear-gradient(to bottom, #ffb400, #ffe793)"
+                                       : "linear-gradient(to bottom, #ffb400, #ffe793)",
                                  color:
                                     activeTab === "running" ? "#000" : "rgb(112, 112, 112)",
                                  transition: "all 0.3s ease",
@@ -199,7 +199,7 @@ const fetchvip = async () => {
                                           style={{ width: '100%', height: '340px', transform: 'translate(0%, 0px) translateZ(0px)' }}>
 
                                           <uni-swiper-item
-                                             data-v-7542ab04="" class="product-card" style={{ marginTop: '10px', borderRadius: '10px', backgroundColor: 'hsla(0, 0%, 100%, .101960784313725' }}
+                                             data-v-7542ab04="" class="product-card" style={{ marginTop: '10px', borderRadius: '10px'}}
                                           >
                                              <Slider {...settings} beforeChange={(oldIndex, newIndex) => setCurrentSlideIndex(newIndex)}>                                                
                                                 {slides.map((slide, index) => (
@@ -250,8 +250,8 @@ const fetchvip = async () => {
                                                                   style={{
                                                                      borderRadius: '70px',
                                                                      border: slide.purchased ? '1px solid #c3c3c3' : 'none',
-                                                                     backgroundColor: slide.purchased ? '#ffc600' : '#f0f0f0',
-                                                                     color: slide.purchased ? '#000' : '#888', // black text on cyan
+                                                                     backgroundColor: slide.purchased ? 'rgb(225 201 113)' : 'rgb(225 201 113)',
+                                                                     color: slide.purchased ? '#888' : '#000', // black text on cyan
                                                                      cursor: slide.purchased ? 'not-allowed' : 'pointer'
                                                                   }}
                                                                   // onClick={() => handleBuyClick(slide)}

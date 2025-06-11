@@ -217,8 +217,7 @@ const Dashboard = () => {
                                  {t('Deposit')}
                               </Link><img data-v-06ae08d2="" src="/static/img/usdtdown.png"
                                  alt="" style={{ filter: 'brightness(0.90) invert(6)' }} /></uni-view>
-                           <uni-view data-v-06ae08d2="" class="transfer"><img
-                              data-v-06ae08d2="" src="/static/img/transfer.png" alt="" style={{ filter: 'brightness(0) invert(0)' }} /></uni-view>
+                       
 
                            <uni-view
                               data-v-06ae08d2="" class="balance-btn"> <Link to="/withdraw-req" style={{ color: '#000', textDecoration: 'none', fontWeight: '500', fontSize: '16px' }}>{t('Withdraw')} </Link><img data-v-06ae08d2=""
@@ -332,8 +331,8 @@ const Dashboard = () => {
 
                                     <div
                                        style={{
-                                          backgroundColor: isPositive ? "#ffc600" : "#f44336",
-                                          color: "#fff",
+                                          background: isPositive ? "linear-gradient(to bottom, #F5C144, #D99A28)" : "#f44336",
+                                          color: "#000",
                                           padding: "4px 10px",
                                           borderRadius: "12px",
                                           fontSize: "13px",

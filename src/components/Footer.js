@@ -6,7 +6,7 @@ export default function Footer() {
   const location = useLocation();
   const currentPath = location.pathname;
    const { t } = useTranslation();
-  const activeFilter = 'brightness(0) saturate(100%) invert(91%) sepia(72%) saturate(2675%) hue-rotate(1deg) brightness(100%) contrast(101%)';
+  const activeFilter = '';
   const activeColor = '#ffc600';
 
   return (
