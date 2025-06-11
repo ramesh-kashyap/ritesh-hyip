@@ -191,7 +191,7 @@ const NodeDetails = () => {
                 <uni-view data-v-3dcfa33c="" class="invite-box">
                   <img data-v-3dcfa33c="" src="/static/img/chatbox.png" alt="" />
                   <uni-view data-v-3dcfa33c="" class="invite">
-                    <uni-view data-v-3dcfa33c="" class="title">OnLine Vhat</uni-view>
+                    <uni-view data-v-3dcfa33c="" class="title">Online Chat</uni-view>
                     <uni-view data-v-3dcfa33c="" class="text">Need Helt LEt Chat with A</uni-view>
                   </uni-view>
                 </uni-view>

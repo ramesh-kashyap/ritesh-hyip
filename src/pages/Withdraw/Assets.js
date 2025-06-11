@@ -82,9 +82,6 @@ const Assets = () => {
                                         <uni-view
                                             data-v-248ca5b8="" translate="no" class="profit-num">
                                             
-                                            <uni-view
-                                                data-v-248ca5b8=""
-                                                class="today">Yesterday</uni-view>
                                         </uni-view>
                                     </uni-view>
                                     <uni-view
@@ -96,8 +93,7 @@ const Assets = () => {
                                             </Link><img data-v-06ae08d2="" src="/static/img/usdtdown.png"
                                                 alt="" style={{filter: 'brightness(0.90) invert(6)' }}/>
                                         </uni-view>
-                                        <uni-view data-v-248ca5b8="" class="transfer"><img
-                                            data-v-248ca5b8="" src="/static/img/transfer.png" alt=""style={{filter: 'brightness(0) invert(0)'}} /></uni-view>
+                                      
                                         <uni-view
                                             data-v-06ae08d2="" class="balance-btn">  <Link to="/withdraw-req" style={{ color: '#000', textDecoration: 'none', fontWeight: '500', fontSize: '16px' }}>
                                                 Withdraw
