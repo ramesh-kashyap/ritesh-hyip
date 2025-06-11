@@ -170,7 +170,7 @@ const Dashboard = () => {
                         data-v-06ae08d2="" class="top-box"><uni-view data-v-06ae08d2="" class="left">
                            <Link to="/setting">
                               <uni-view
-                                 data-v-06ae08d2="" class="ava"><img data-v-06ae08d2="" src="/static/img/nlogo.png"
+                                 data-v-06ae08d2="" class="ava"><img data-v-06ae08d2="" src="/static/img/image.png"
                                     alt="" /></uni-view>
                            </Link>
 

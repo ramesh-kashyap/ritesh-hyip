@@ -9410,14 +9410,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: hsla(0, 0%, 100%, .10196078431372549);
+    /* background-color: hsla(0, 0%, 100%, .10196078431372549); */
     /* border-radius: 50% */
 }
 
 .ava img[data-v-06ae08d2] {
     /* border-radius: 50%; */
-    width: 100px;
-    height: 40px
+    width: 118px;
+    height: 33px
 }
 
 .top-text[data-v-06ae08d2] {
