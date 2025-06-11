@@ -57,10 +57,10 @@ const Server = () => {
       effectiveAmount: "15",
       tradeAmount:"2000",
       maxtradeAmount:"5000",
-    Vm1: "3%",
-    Vm2: "3%",
-    Vm3: "3%",
-    Vm4: "3%",
+      Vm1: "3%",
+      Vm2: "3%",
+      Vm3: "3%",
+      Vm4: "3%",
    },
    {
       title: "VIP 4",
@@ -146,12 +146,12 @@ const Server = () => {
       }
    };
 
-   const fetchvip = async () => {
-      try {
-         const response = await Api.get('/fetchvip');
+  const fetchvip = async () => {
+      try {  
+         const response = await Api.get('/fetchvip');       
          console.log(response.data);
          if (response.data?.success) {
-            setQualitys(response.data); // or .servers if you update backend
+            setQualitys(response.data); 
          } else {
             console.error("API did not return success");
          }
@@ -159,6 +159,7 @@ const Server = () => {
          console.error("Error fetching servers:", error);
       }
    };
+
 
    const PLAN_IMAGES = {
       0: "S1",
@@ -210,7 +211,7 @@ const Server = () => {
                               style={{width:"100%",
                                  backgroundColor:
                                     activeTab === "running"
-                                       ? "rgb(21, 213, 199)"
+                                       ? "#ffc600"
                                        : "rgb(255, 255, 255)",
                                  color:
                                     activeTab === "running" ? "#000" : "rgb(112, 112, 112)",
@@ -284,7 +285,7 @@ const Server = () => {
                                                                      borderRadius: '70px',
 
                                                                      border: slide.purchased ? '1px solid #c3c3c3' : 'none',
-                                                                     backgroundColor: slide.purchased ? '#f0f0f0' : '#35f7e7',
+                                                                     backgroundColor: slide.purchased ? '#f0f0f0' : '#ffc600',
                                                                      color: slide.purchased ? '#888' : '#000', // black text on cyan
                                                                      cursor: slide.purchased ? 'not-allowed' : 'pointer'
                                                                   }}

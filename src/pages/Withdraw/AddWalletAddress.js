@@ -90,7 +90,7 @@ const saveAddress = async () => {
                                 <uni-view data-v-b918f992="" class="input-layer">
                                     <uni-view data-v-b918f992="" class="input-title">Wallet Address({ networkType.toUpperCase() })</uni-view>
                                     <uni-view data-v-30449abe="" data-v-b918f992="" class="uni-easyinput" style={{color: 'rgb(255, 255, 255)'}}>
-                                        <uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{borderColor: 'rgb(22 191 179)', backgroundColor: 'unset'}}>
+                                        <uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{borderColor: '#ffc600', backgroundColor: 'unset'}}>
                                             <uni-input data-v-30449abe="" class="uni-easyinput__content-input" style={{paddingLeft: '10px'}}>
                                                 <div class="uni-input-wrapper">
                                                     {/* <div class="uni-input-placeholder uni-easyinput__placeholder-class" data-v-30449abe="" data-v-b918f992=""></div> */}
@@ -103,7 +103,7 @@ const saveAddress = async () => {
                                 <uni-view data-v-b918f992="" class="input-layer">
                                     <uni-view data-v-b918f992="" class="input-title">Verification Code</uni-view>
                                     <uni-view data-v-30449abe="" data-v-b918f992="" class="uni-easyinput" style={{color: 'rgb(255, 255, 255)'}}>
-                                        <uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{borderColor: 'rgb(22 191 179)', backgroundColor: 'unset'}}>
+                                        <uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{borderColor: '#ffc600', backgroundColor: 'unset'}}>
                                             <uni-input data-v-30449abe="" class="uni-easyinput__content-input" style={{paddingRight: '10px', paddingLeft: '10px'}}>
                                                 <div class="uni-input-wrapper">
                                                     {/* <div class="uni-input-placeholder uni-easyinput__placeholder-class" data-v-30449abe="" data-v-b918f992=""></div> */}

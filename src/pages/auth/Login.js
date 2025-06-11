@@ -83,7 +83,7 @@ const Login = () => {
                   <uni-view data-v-2b56ecaf="" class="input-layer">
 
                     <uni-view data-v-2b56ecaf="" class="input-title">Email</uni-view>
-                    <uni-view data-v-30449abe="" data-v-2b56ecaf="" class="uni-easyinput" ><uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{ borderColor: 'rgb(22 191 179)', backgroundColor: 'unset' }}><uni-view data-v-30449abe="" class="content-clear-icon"><img data-v-30449abe="" src="/static/img/user.png" alt="" /></uni-view>  <uni-input data-v-30449abe="" class="uni-easyinput__content-input" style={{ paddingLeft: '10px' }}>
+                    <uni-view data-v-30449abe="" data-v-2b56ecaf="" class="uni-easyinput" ><uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{ borderColor: '#ffc600', backgroundColor: 'unset' }}><uni-view data-v-30449abe="" class="content-clear-icon"><img data-v-30449abe="" src="/static/img/user.png" alt="" /></uni-view>  <uni-input data-v-30449abe="" class="uni-easyinput__content-input" style={{ paddingLeft: '10px' }}>
                       <div class="uni-input-wrapper">
                         <div class="uni-input-placeholder uni-easyinput__placeholder-class" data-v-30449abe="" data-v-2b56ecaf="" style={{ display: 'none' }}>Please Enter Email</div>
                         <input maxLength="140" autoComplete="off" type="text" name="email" placeholder="Enter Email Address" value={email} onChange={(e) => setEmail(e.target.value)} className="uni-input-input" required enterKeyHint="done" />
@@ -95,7 +95,7 @@ const Login = () => {
                   <uni-view data-v-2b56ecaf="" class="input-layer">
 
                     <uni-view data-v-2b56ecaf="" class="input-title">Password</uni-view>
-                    <uni-view data-v-30449abe="" data-v-2b56ecaf="" class="uni-easyinput" ><uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{ borderColor: 'rgb(22 191 179)', backgroundColor: 'unset' }}><uni-view data-v-30449abe="" class="content-clear-icon"><img data-v-30449abe="" src="/static/img/lock.png" alt="" /></uni-view>  <uni-input data-v-30449abe="" class="uni-easyinput__content-input" style={{ paddingLeft: '10px' }}>
+                    <uni-view data-v-30449abe="" data-v-2b56ecaf="" class="uni-easyinput" ><uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{ borderColor: '#ffc600', backgroundColor: 'unset' }}><uni-view data-v-30449abe="" class="content-clear-icon"><img data-v-30449abe="" src="/static/img/lock.png" alt="" /></uni-view>  <uni-input data-v-30449abe="" class="uni-easyinput__content-input" style={{ paddingLeft: '10px' }}>
                       <div class="uni-input-wrapper">
                         <div class="uni-input-placeholder uni-easyinput__placeholder-class" data-v-30449abe="" data-v-2b56ecaf="" style={{ display: 'none' }}>Please Enter password</div>
                         <input maxlength="140" step="" enterkeyhint="done" autocomplete="off" type="password"  placeholder="Enter Password" name="password" value={password}
@@ -129,7 +129,7 @@ const Login = () => {
                   <button data-v-2b56ecaf="" class="login" style={{ width: '100%' }} onClick={handleLogin}>Log in</button>
 
 
-                  <uni-view data-v-2b56ecaf="" class="register">Don't have an account?<Link to="/register" style={{ textDecorationLine: 'none' }}><uni-view data-v-2b56ecaf="" class="create" style={{color:'rgb(22 191 179)'}}>Create Account</uni-view></Link></uni-view>
+                  <uni-view data-v-2b56ecaf="" class="register">Don't have an account?<Link to="/register" style={{ textDecorationLine: 'none' }}><uni-view data-v-2b56ecaf="" class="create" style={{color:'#ffc600'}}>Create Account</uni-view></Link></uni-view>
                 </uni-view>
               </uni-view>
             </uni-page-body>

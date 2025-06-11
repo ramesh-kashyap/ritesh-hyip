@@ -53,7 +53,7 @@ const ServerCommission = () => {
                                     <uni-view data-v-cc630f0a="" class="item">
                                         <uni-view data-v-cc630f0a="" class="first">
                                             <uni-view data-v-cc630f0a="" class="left">{createdAt}</uni-view>
-                                            <uni-view data-v-cc630f0a="" class="right" style={{ color: 'rgb(53, 247, 231)' }}>+{serverc}</uni-view>
+                                            <uni-view data-v-cc630f0a="" class="right" style={{ color: '#ffc600' }}>+{serverc}</uni-view>
                                         </uni-view>
                                         <uni-view data-v-cc630f0a="" class="layer">
                                             <uni-view data-v-cc630f0a="" class="title">Fund Flows</uni-view>

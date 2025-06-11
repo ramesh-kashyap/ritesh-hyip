@@ -18,8 +18,10 @@
   "Home": "Home",
   "Trade": "Trade",
   "Assets": "Assets",
-  "ExclusiveUsers": "Exclusive For New Users",
-  "Exclusiverewards": "Exclusive for new users – Sign up & claim your USD rewards!",
+  "ExclusiveUsers": "For New Users",
+  "Exclusiverewards": "Exclusive for new users",
+  "Completetask": "Complete Your Daily Task",
+  "ctask":"Trade Now For Reward",
   "rewards": "Get Rewards"
 
 }

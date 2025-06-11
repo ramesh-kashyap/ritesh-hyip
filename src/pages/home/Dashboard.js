@@ -155,6 +155,9 @@ const Dashboard = () => {
    const navTeam = () => {
       navigate("/Refer"); // 👈 Go back to the previous page in history
    };
+   const navQuality = () => {
+      navigate("/quality"); // 👈 Go back to the previous page in history
+   };
    return (
 
       <div class="uni-body pages-index-index">
@@ -167,32 +170,33 @@ const Dashboard = () => {
                         data-v-06ae08d2="" class="top-box"><uni-view data-v-06ae08d2="" class="left">
                            <Link to="/setting">
                               <uni-view
-                                 data-v-06ae08d2="" class="ava"><img data-v-06ae08d2="" src="../fav.png"
-                                    alt="" style={{ width: 40, height: 40 }} /></uni-view>
+                                 data-v-06ae08d2="" class="ava"><img data-v-06ae08d2="" src="/static/img/nlogo.png"
+                                    alt="" /></uni-view>
                            </Link>
 
                            <uni-view data-v-06ae08d2="" class="top-text">
-                              <uni-view
+                              {/* <uni-view
                                  data-v-06ae08d2="" class="name">{t('welcome')}, {userDetails?.name}</uni-view>
                               <uni-view data-v-06ae08d2=""
-                                 class="uid">Username: {userDetails?.username}</uni-view>
+                                 class="uid">Username: {userDetails?.username}</uni-view> */}
 
-                           </uni-view>
-
+                           </uni-view>                         
                         </uni-view>
+                        
                         <uni-view
                            data-v-06ae08d2="" class="right">
                            {/* <uni-view data-v-06ae08d2="" class="notice"><img
                               data-v-06ae08d2="" src="/static/img/rewards.png" alt=""
                               style={{ width: '28px' }} /></uni-view> */}
-                           <Link to="/profile">
+                           <Link to="/notice">
                               <uni-view data-v-06ae08d2="" class="notice"><img
-                                 data-v-06ae08d2="" src="/static/img/bellicon.png" alt="" style={{ width: '40px', height: '40px', filter: 'brightness(0.72) invert(0)' }} /><uni-view
+                                 data-v-06ae08d2="" src="/static/img/belliy.png" alt="" style={{ width: '40px', height: '40px', }} /><uni-view
                                     data-v-06ae08d2=""
                                     class=""></uni-view></uni-view>
                            </Link>
                         </uni-view>
                      </uni-view>
+                     {t('welcome')}, {userDetails?.name}
                      <uni-view data-v-06ae08d2="" class="ellipse"></uni-view>
 
                      <uni-view
@@ -223,12 +227,12 @@ const Dashboard = () => {
                         </uni-view></uni-view>
                      <uni-view
                         data-v-06ae08d2="" class="index-title">{t('attention')}</uni-view>
-                     <uni-view data-v-06ae08d2=""
+                     {/* <uni-view data-v-06ae08d2=""
                         class="attention-box">
 
                            {coinsToShow.map((coin, index) => {
                                  const isPositive = coin.percent >= 0;
-                                 const percentColor = isPositive ? 'rgb(21, 213, 199)' : 'rgb(255, 87, 87)';
+                                 const percentColor = isPositive ? '#ffc600' : 'rgb(255, 87, 87)';
                                  return (
                            <uni-view  key={coin.symbol}
 
@@ -249,24 +253,27 @@ const Dashboard = () => {
 
                               );
                            })}
-                  </uni-view>
+                  </uni-view> */}
                      <uni-view
                         data-v-06ae08d2="" class="new-banner">
-                        <uni-swiper data-v-06ae08d2="" style={{ height: '270px', marginBottom:-100}}>
+                        <uni-swiper data-v-06ae08d2="" style={{ height: '270px', marginBottom:-160}}>
                            <div class="uni-swiper-wrapper">
                               <div class="uni-swiper-slides">
-                                 <div class="uni-swiper-slide-frame"
-                                    style={{ width: '100%', height: '100%', transform: 'translate(0%, 0px) translateZ(0px)' }}>
-                                    <uni-swiper-item data-v-06ae08d2=""
-                                       style={{ position: 'absolute', width: '100%', height: '100%', transform: 'translate(0%, 0px) translateZ(0px)' }}><uni-view
-                                          data-v-06ae08d2="" class="banner-item"><img data-v-06ae08d2=""
-                                             src="/static/img/Registration.png" alt="" /><uni-view
-                                                data-v-06ae08d2="" class="banner-title">{t('ExclusiveUsers')}</uni-view><uni-view data-v-06ae08d2=""
-                                                   class="banner-text">{t('Exclusiverewards')}</uni-view><uni-view data-v-06ae08d2=""
-                                                      class="banner-btn" onClick={navTeam}>Invite Friends</uni-view></uni-view></uni-swiper-item>
-
-
-
+                                 <div class="uni-swiper-slide-frame" style={{ width: '100%', height: '100%', transform: 'translate(0%, 0px) translateZ(0px)' }}>
+                                    <uni-swiper-item data-v-06ae08d2="" style={{ position: 'absolute',display:'flex', width: '100%', height: '100%', transform: 'translate(0%, 0px) translateZ(0px)' }}>
+                                       <uni-view data-v-06ae08d2="" class="banner-item" onClick={navTeam}>
+                                             <img data-v-06ae08d2="" src="/static/tabbar/invite.png" alt="" />
+                                             <uni-view data-v-06ae08d2="" class="banner-title">{t('ExclusiveUsers')}</uni-view>
+                                             <uni-view data-v-06ae08d2="" class="banner-text">{t('Exclusiverewards')}</uni-view>
+                                             {/* <uni-view data-v-06ae08d2="" class="banner-btn" onClick={navTeam}>Invite Friends</uni-view> */}
+                                       </uni-view>
+                                       <uni-view data-v-06ae08d2="" class="banner-item" onClick={navQuality}>
+                                             <img data-v-06ae08d2="" src="/static/tabbar/trade.png" alt=""/>
+                                             <uni-view data-v-06ae08d2="" class="banner-title">{t('ctask')}</uni-view>
+                                             <uni-view data-v-06ae08d2="" class="banner-text">{t('Completetask')}</uni-view>
+                                             {/* <uni-view data-v-06ae08d2="" class="banner-btn" onClick={navTeam}>Trade Now</uni-view> */}
+                                       </uni-view>
+                                    </uni-swiper-item>
                                  </div>
                               </div>
 
@@ -325,7 +332,7 @@ const Dashboard = () => {
 
                                     <div
                                        style={{
-                                          backgroundColor: isPositive ? "rgb(21 213 199)" : "#f44336",
+                                          backgroundColor: isPositive ? "#ffc600" : "#f44336",
                                           color: "#fff",
                                           padding: "4px 10px",
                                           borderRadius: "12px",

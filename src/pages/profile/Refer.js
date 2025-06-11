@@ -96,14 +96,14 @@ const Refer = () => {
                     <uni-view data-v-35b9a113="" data-v-0f43bbff="" class="uni-col uni-col-6" style={{ paddingLeft: '0px', paddingRight: '0px' }}></uni-view>
                   </uni-view>
                 </uni-view>
-                <uni-view data-v-0f43bbff="" class="info-box" style={{backgroundImage: "url('../static/img/b.png')", borderRadius:20}}>
+                <uni-view data-v-0f43bbff="" class="info-box" style={{background: "linear-gradient(to right, rgb(255, 255, 255), rgb(255, 198, 0))", borderRadius:20,}}>
                   <uni-view data-v-0f43bbff="" class="qrcode-box">
                     <uni-view data-v-cd74eaf4="" data-v-0f43bbff="" class="tki-qrcode"> 
                       <uni-view data-v-0f43bbff="" class=""><img data-v-0f43bbff="" src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${window.location.origin}/register?sponsor=${username}`} alt="" /></uni-view> 
                     </uni-view>
                   </uni-view>
-                  <uni-view data-v-0f43bbff="" class="title" style={{color:"#fff"}}>Invitation Registration Link</uni-view>
-                  <uni-view data-v-0f43bbff="" class="link" style={{color:"#fff"}}>
+                  <uni-view data-v-0f43bbff="" class="title" style={{color:"#000"}}>Invitation Registration Link</uni-view>
+                  <uni-view data-v-0f43bbff="" class="link" style={{color:"#000"}}>
                     {inviteLink ? inviteLink : "Invite link not available"}
                     <div onClick={() => copyToClipboard(inviteLink)} style={{ marginLeft: '10px', cursor: 'pointer' }}>
                       <img src="/static/img/copy.png" style={{ filter: 'brightness(0.1) invert(1)',width: '22px'}}alt="c"/>
@@ -112,11 +112,11 @@ const Refer = () => {
  
  
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
-                    <uni-view data-v-0f43bbff="" class="title" style={{color:"#fff", fontSize: '18px', fontWeight: 'bold', marginBottom: '10px' }}>
+                    <uni-view data-v-0f43bbff="" class="title" style={{color:"#000", fontSize: '18px', fontWeight: 'bold', marginBottom: '10px' }}>
                       Your Invitation Code
                     </uni-view>
-                    <uni-view data-v-06ae08d2 class="balance-btn" style={{width:'75%', color:"#fff", display: 'flex', alignItems: 'center',color:'black', fontSize: '16px', marginBottom: '10px' }}>
-                      <span style={{color:"#fff"}}>{username ? username : "Username not available"}</span>
+                    <uni-view data-v-06ae08d2 class="balance-btn" style={{width:'75%', color:"#000", display: 'flex', alignItems: 'center',color:'black', fontSize: '16px', marginBottom: '10px' }}>
+                      <span style={{color:"#000"}}>{username ? username : "Username not available"}</span>
                        <div onClick={() => copyToClipboard(username)} style={{ marginLeft: '10px', cursor: 'pointer' }}>
                       <img src="/static/img/copy.png" style={{ filter: 'brightness(0.1) invert(1)',width: '22px' }}alt="c"/>
                     </div>
@@ -125,12 +125,12 @@ const Refer = () => {
                 </uni-view>
                 <uni-view data-v-0f43bbff="" class="two-btn">
                   <uni-view data-v-0f43bbff="" class="btn-item">
-                    <uni-view data-v-0f43bbff="" class="imgbox"><img data-v-0f43bbff="" src="/static/img/dollar.png" alt="" style={{filter: 'brightness(0.72) invert(0)'}} /></uni-view>
+                    <uni-view data-v-0f43bbff="" class="imgbox"><img data-v-0f43bbff="" src="/static/img/dollar.png" alt="" style={{filter: 'brightness(0) saturate(100%) invert(91%) sepia(72%) saturate(2675%) hue-rotate(1deg) brightness(100%) contrast(101%)'}} /></uni-view>
                     <uni-view data-v-0f43bbff="" class="value">$ {serR}</uni-view>
                     <uni-view data-v-0f43bbff="" class="title">Total Referral Commission</uni-view>
                   </uni-view>
                   <uni-view data-v-0f43bbff="" class="btn-item">
-                    <uni-view data-v-0f43bbff="" class="imgbox"><img data-v-0f43bbff="" src="/static/img/people2.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /></uni-view>
+                    <uni-view data-v-0f43bbff="" class="imgbox"><img data-v-0f43bbff="" src="/static/img/people2.png" alt=""style={{filter: 'brightness(0) saturate(100%) invert(91%) sepia(72%) saturate(2675%) hue-rotate(1deg) brightness(100%) contrast(101%)'}} /></uni-view>
                     <uni-view data-v-0f43bbff="" class="value">{income.data?.totalTeam}<span data-v-0f43bbff="" style={{ fontSize: '14px', fontWeight: '400', marginLeft: '3px' }}>({income.data?.ActivetotalTeam}Activated)</span></uni-view>
                     <uni-view data-v-0f43bbff="" class="title">Total Referrals</uni-view>
                   </uni-view>

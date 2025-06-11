@@ -136,7 +136,7 @@
                     },
                     primaryColor: {
                         type: String,
-                        default: "#35F7E7"
+                        default: "#ffc600"
                     },
                     styles: {
                         type: Object,

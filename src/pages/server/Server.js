@@ -150,7 +150,7 @@ const Server = () => {
                               style={{
                                  backgroundColor:
                                     activeTab === "running"
-                                       ? "rgb(21, 213, 199)"
+                                       ? "#ffc600"
                                        : "rgb(255, 255, 255)",
                                  color:
                                     activeTab === "running" ? "#000" : "rgb(112, 112, 112)",
@@ -167,7 +167,7 @@ const Server = () => {
                               style={{
                                  backgroundColor:
                                     activeTab === "completed"
-                                       ? "rgb(21, 213, 199)"
+                                       ? "#ffc600"
                                        : "rgb(255, 255, 255)",
                                  color:
                                     activeTab === "completed"
@@ -280,7 +280,7 @@ const Server = () => {
                                                                      borderRadius: '70px',
 
                                                                      border: slide.purchased ? '1px solid #c3c3c3' : 'none',
-                                                                     backgroundColor: slide.purchased ? '#f0f0f0' : '#35f7e7',
+                                                                     backgroundColor: slide.purchased ? '#f0f0f0' : '#ffc600',
                                                                      color: slide.purchased ? '#888' : '#000', // black text on cyan
                                                                      cursor: slide.purchased ? 'not-allowed' : 'pointer'
                                                                   }}

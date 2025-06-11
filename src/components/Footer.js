@@ -6,8 +6,8 @@ export default function Footer() {
   const location = useLocation();
   const currentPath = location.pathname;
    const { t } = useTranslation();
-  const activeFilter = 'invert(78%) sepia(24%) saturate(1531%) hue-rotate(124deg) brightness(85%) contrast(100%)';
-  const activeColor = '#15d5c7';
+  const activeFilter = 'brightness(0) saturate(100%) invert(91%) sepia(72%) saturate(2675%) hue-rotate(1deg) brightness(100%) contrast(101%)';
+  const activeColor = '#ffc600';
 
   return (
 
@@ -18,7 +18,7 @@ export default function Footer() {
 
         <uni-tabbar
           class="uni-tabbar-bottom" >
-          <div class="uni-tabbar" style={{ backgroundColor: '#100c23', backdropFilter: 'none',width: '100%' }}>
+          <div class="uni-tabbar" style={{ backgroundColor: '#1d1b23', backdropFilter: 'none',width: '100%' }}>
             <div class="uni-tabbar-border" style={{ backgroundColor: 'rgba(255, 255, 255, 0.12)' }}></div>
             <div class="uni-tabbar__item">
             <Link to="/dashboard"style={{ textDecoration: "none", color: "inherit",cursor: "none"  }}>
@@ -37,7 +37,7 @@ export default function Footer() {
                   <div  className="uni-tabbar__label"
                     style={{
                       color:
-                        currentPath === '/dashboard' ? '#15d5c7' : '#fff',
+                        currentPath === '/dashboard' ? '#ffc600' : '#fff',
                       fontSize: '13px',
                       lineHeight: 'normal',
                       marginTop: '3px',
@@ -65,7 +65,7 @@ export default function Footer() {
                   <div  className="uni-tabbar__label"
                     style={{
                       color:
-                        currentPath === '/quality' ? '#15d5c7' : '#fff',
+                        currentPath === '/quality' ? '#ffc600' : '#fff',
                       fontSize: '13px',
                       lineHeight: 'normal',
                       marginTop: '3px',
@@ -94,7 +94,7 @@ export default function Footer() {
                   <div  className="uni-tabbar__label"
                     style={{
                       color:
-                        currentPath === '/assets' ? '#15d5c7' : '#fff',
+                        currentPath === '/assets' ? '#ffc600' : '#fff',
                       fontSize: '13px',
                       lineHeight: 'normal',
                       marginTop: '3px',
@@ -120,7 +120,7 @@ export default function Footer() {
                   <div className="uni-tabbar__label"
                     style={{
                       color:
-                        currentPath === '/profile' ? '#15d5c7' : '#fff',
+                        currentPath === '/profile' ? '#ffc600' : '#fff',
                       fontSize: '13px',
                       lineHeight: 'normal',
                       marginTop: '3px',

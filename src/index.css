@@ -65,7 +65,7 @@ code {
 .captcha-input {
   padding: 14px;
   border-radius: 25px;
-  border: 1px solid  rgb(21, 213, 199);
+  border: 1px solid  #ffc600;
   background: transparent;
   color: #fff;
   outline: none;

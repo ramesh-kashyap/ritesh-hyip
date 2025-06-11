@@ -75,7 +75,7 @@ const Deposit = () => {
                         class="item"
                         onClick={() => setSelected('trc20')}
                         style={{
-                          backgroundColor: selected === 'trc20' ? '#00cc99' : '#f0f0f0',
+                          backgroundColor: selected === 'trc20' ? '#ffc600' : '#fff',
                           padding: '8px 12px',
                           borderRadius: '6px',
                           cursor: 'pointer',
@@ -92,7 +92,7 @@ const Deposit = () => {
                         class="item"
                         onClick={() => setSelected('bep20')}
                         style={{
-                          backgroundColor: selected === 'bep20' ? '#00cc99' : '#f0f0f0',
+                          backgroundColor: selected === 'bep20' ? '#ffc600' : '#fff',
                           padding: '8px 12px',
                           borderRadius: '6px',
                           cursor: 'pointer',

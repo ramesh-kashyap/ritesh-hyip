@@ -42,7 +42,7 @@ const Assets = () => {
 
 
        const getAmountColor = (type) => {
-        return type === 'buyfund' || type === 'income' ? 'rgb(21, 213, 199)' : 'rgb(255, 61, 61)';
+        return type === 'buyfund' || type === 'income' ? '#ffc600' : 'rgb(255, 61, 61)';
     };
 
     const getAmountPrefix = (type) => {
@@ -127,10 +127,10 @@ const Assets = () => {
                                         <Link to="/transaction"   style={{ textDecoration: 'none', color: '#fff' }}><p>View all</p></Link>
                                     </uni-view></uni-view>
                                 {topTransactions.map((item, index) => (
-                                                <uni-view data-v-248ca5b8=""  class="item" >
+                                                <uni-view data-v-248ca5b8=""  class="item" key={index} >
                                                     <uni-view data-v-248ca5b8=""  class="first">
                                                         <uni-view data-v-248ca5b8=""  class="left">
-                                                            {new Date(item.created_at).toLocaleString()}
+                                                            {item.created_at.toLocaleString()}
                                                         </uni-view>
                                                         <uni-view data-v-248ca5b8=""
                                                              class="right"style={{ color: getAmountColor(item.type),fontWeight:"900" }}>

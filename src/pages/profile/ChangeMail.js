@@ -113,7 +113,7 @@ const ChangeMail = () => {
                 <uni-view data-v-34a1f189="" class="content">
                   <uni-view data-v-34a1f189="" class="input-layer">
                     <uni-view data-v-34a1f189="" class="input-title">Old Mail</uni-view>
-                    <uni-view data-v-30449abe="" data-v-34a1f189="" class="uni-easyinput" style={{ color: 'rgb(255, 255, 255)' }}><uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{ borderColor: 'rgb(22 191 179)', backgroundColor: 'unset' }}> <uni-input data-v-30449abe="" class="uni-easyinput__content-input" style={{ paddingLeft: '10px' }}>
+                    <uni-view data-v-30449abe="" data-v-34a1f189="" class="uni-easyinput" style={{ color: 'rgb(255, 255, 255)' }}><uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{ borderColor: '#ffc600', backgroundColor: 'unset' }}> <uni-input data-v-30449abe="" class="uni-easyinput__content-input" style={{ paddingLeft: '10px' }}>
                       <div class="uni-input-wrapper">
                         <input maxlength="140" step="" enterkeyhint="done" autocomplete="off" type="email" class="uni-input-input" value={changeEmail}
                           onChange={(e) => setchangeEmail(e.target.value)} placeholder="Please enter Old Email" />
@@ -125,7 +125,7 @@ const ChangeMail = () => {
                   <uni-view data-v-b918f992="" class="input-layer">
                     <uni-view data-v-b918f992="" class="input-title">Verification Code</uni-view>
                     <uni-view data-v-30449abe="" data-v-b918f992="" class="uni-easyinput" style={{ color: 'rgb(255, 255, 255)' }}>
-                      <uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{ borderColor: 'rgb(22 191 179)', backgroundColor: 'unset' }}>
+                      <uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{ borderColor: '#ffc600', backgroundColor: 'unset' }}>
                         <uni-input data-v-30449abe="" class="uni-easyinput__content-input" style={{ paddingRight: '10px', paddingLeft: '10px' }}>
                           <div class="uni-input-wrapper">
                             {/* <div class="uni-input-placeholder uni-easyinput__placeholder-class" data-v-30449abe="" data-v-b918f992=""></div> */}
@@ -149,7 +149,7 @@ const ChangeMail = () => {
                   </uni-view>
                   <uni-view data-v-34a1f189="" class="input-layer">
                     <uni-view data-v-34a1f189="" class="input-title">New Email</uni-view>
-                    <uni-view data-v-30449abe="" data-v-34a1f189="" class="uni-easyinput" style={{ color: 'rgb(255, 255, 255)' }}><uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{ borderColor: 'rgb(22 191 179)', backgroundColor: 'unset' }}> <uni-input data-v-30449abe="" class="uni-easyinput__content-input" style={{ paddingLeft: '10px' }}>
+                    <uni-view data-v-30449abe="" data-v-34a1f189="" class="uni-easyinput" style={{ color: 'rgb(255, 255, 255)' }}><uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{ borderColor: '#ffc600', backgroundColor: 'unset' }}> <uni-input data-v-30449abe="" class="uni-easyinput__content-input" style={{ paddingLeft: '10px' }}>
                       <div class="uni-input-wrapper">
                         <input maxlength="140" step="" enterkeyhint="done" autocomplete="off" type="changeEmail" class="uni-input-input" value={changeEmailConfirmation}
                           onChange={(e) => setchangeEmailConfirmation(e.target.value)} placeholder="Please enter your new New Email" />
@@ -161,7 +161,7 @@ const ChangeMail = () => {
                   <uni-view data-v-b918f992="" class="input-layer">
                     <uni-view data-v-b918f992="" class="input-title">Verification Code</uni-view>
                     <uni-view data-v-30449abe="" data-v-b918f992="" class="uni-easyinput" style={{ color: 'rgb(255, 255, 255)' }}>
-                      <uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{ borderColor: 'rgb(22 191 179)', backgroundColor: 'unset' }}>
+                      <uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{ borderColor: '#ffc600', backgroundColor: 'unset' }}>
                         <uni-input data-v-30449abe="" class="uni-easyinput__content-input" style={{ paddingRight: '10px', paddingLeft: '10px' }}>
                           <div class="uni-input-wrapper">
                             {/* <div class="uni-input-placeholder uni-easyinput__placeholder-class" data-v-30449abe="" data-v-b918f992=""></div> */}
