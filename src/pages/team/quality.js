@@ -20,13 +20,11 @@ const Server = () => {
       price: "vi1-DkyC-7lK",
       days: 7,
       purchased: false,
-      effectiveAmount: "10",
+      effectiveAmount: "100",
       tradeAmount:"30",
-      maxtradeAmount:"500",
-    Vm1: "1%",
-    Vm2: "1%",
-    Vm3: "1%",
-    Vm4: "1%",
+      maxtradeAmount:"100",
+      TeamA: "0",
+      TeamBC: "0",
    },
    {
       title: "VIP 2",
@@ -37,13 +35,11 @@ const Server = () => {
       price: "vi2-CCAxt9OI",
       days: 15,
       purchased: true,
-      effectiveAmount: "12",
+      effectiveAmount: "2000",
       tradeAmount:"500",
       maxtradeAmount:"2000",
-    Vm1: "2%",
-    Vm2: "2%",
-    Vm3: "2%",
-    Vm4: "2%",
+      TeamA: "3",
+      TeamBC: "6",
    },
    {
       title: "VIP 3",
@@ -54,13 +50,11 @@ const Server = () => {
       price: "vi2-CCAxt9OI",
       days: 15,
       purchased: true,
-      effectiveAmount: "15",
+      effectiveAmount: "5000",
       tradeAmount:"2000",
       maxtradeAmount:"5000",
-      Vm1: "3%",
-      Vm2: "3%",
-      Vm3: "3%",
-      Vm4: "3%",
+      TeamA: "10",
+      TeamBC: "24",
    },
    {
       title: "VIP 4",
@@ -74,50 +68,14 @@ const Server = () => {
       effectiveAmount: "20",
       tradeAmount:"5000",
       maxtradeAmount:"15000",
-    Vm1: "4%",
-    Vm2: "4%",
-    Vm3: "4%",
-    Vm4: "4%",
+    TeamA: "15",
+    TeamBC: "48",
    },
-   {
-      title: "VIP 5",
-      heading: "VIP 5 Upgrade Conditions",
-      text: "Amount that can be invested $: 100-300",
-      text1: "Optional investment period (hours): 24",
-      text2: "To: 48",
-      price: "vi2-CCAxt9OI",
-      days: 15,
-      purchased: true,
-      effectiveAmount: "25",
-      tradeAmount:"15000",
-      maxtradeAmount:"45000",
-    Vm1: "5%",
-    Vm2: "5%",
-    Vm3: "5%",
-    Vm4: "5%",
-   },
-    {
-      title: "VIP 5",
-      heading: "VIP 5 Upgrade Conditions",
-      text: "Amount that can be invested $: 100-300",
-      text1: "Optional investment period (hours): 24",
-      text2: "To: 48",
-      price: "vi2-CCAxt9OI",
-      days: 15,
-      purchased: true,
-      effectiveAmount: "25",
-      tradeAmount:"45000",
-      maxtradeAmount:"135000",
-    Vm1: "5%",
-    Vm2: "5%",
-    Vm3: "5%",
-    Vm4: "5%",
-   }
 ]);
 
     useEffect(()=>{
         fetchvip();
-      })
+      },[])
    const handleBuyClick = async (slideData) => {
 
       const max = slideData.text.split("-")[1].replace("$", "");      
@@ -316,21 +274,21 @@ const Server = () => {
                   <uni-view data-v-0f43bbff="" class="title">{slides[currentSlideIndex]?.heading || "VIP Upgrade Conditions"}</uni-view>
                   <uni-view data-v-0f43bbff="" class="layout">
                     <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/Vm1.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
+                      {/* <img data-v-0f43bbff="" src="/static/img/TeamA.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
                       Effective Amount</uni-view>
                     <uni-view data-v-0f43bbff="" class="rate">${servers.balance || 0}/ ${slides[currentSlideIndex]?.tradeAmount || "10%"}</uni-view>
                   </uni-view>
                   <uni-view data-v-0f43bbff="" class="layout">
                     <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/Vm2.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
+                      {/* <img data-v-0f43bbff="" src="/static/img/TeamBC.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
                       First Generation Valid Members</uni-view>
                     <uni-view data-v-0f43bbff="" class="rate">{servers.directmembers || 0}</uni-view>
                   </uni-view>
                   <uni-view data-v-0f43bbff="" class="layout">
                     <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/Vm3.png" alt="" style={{filter: 'brightness(0.72) invert(0)'}}/> */}
+                      {/* <img data-v-0f43bbff="" src="/static/img/TeamC.png" alt="" style={{filter: 'brightness(0.72) invert(0)'}}/> */}
                       Second Generation Valid Members</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">{servers?.sponsor?.teamBCount || 0}</uni-view>
+                    <uni-view data-v-0f43bbff="" class="rate">{servers?.sponsor?.TeamBCCount || 0}</uni-view>
                   </uni-view>
                   <uni-view data-v-0f43bbff="" class="layout">
                     <uni-view data-v-0f43bbff="" class="level">
@@ -344,19 +302,19 @@ const Server = () => {
                   <uni-view data-v-0f43bbff="" class="title">VIP Benefits</uni-view>
                   <uni-view data-v-0f43bbff="" class="layout">
                     <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/Vm1.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
+                      {/* <img data-v-0f43bbff="" src="/static/img/TeamA.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
                       Minimum Amount Quantifiction</uni-view>
                     <uni-view data-v-0f43bbff="" class="rate">${slides[currentSlideIndex]?.tradeAmount || "10%"}</uni-view>
                   </uni-view>
                   <uni-view data-v-0f43bbff="" class="layout">
                     <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/Vm2.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
+                      {/* <img data-v-0f43bbff="" src="/static/img/TeamBC.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
                       Maximum Amount Quantifiction</uni-view>
                     <uni-view data-v-0f43bbff="" class="rate">${slides[currentSlideIndex]?.maxtradeAmount || "10%"}</uni-view>
                   </uni-view>
                   <uni-view data-v-0f43bbff="" class="layout">
                     <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/Vm3.png" alt="" style={{filter: 'brightness(0.72) invert(0)'}}/> */}
+                      {/* <img data-v-0f43bbff="" src="/static/img/TeamC.png" alt="" style={{filter: 'brightness(0.72) invert(0)'}}/> */}
                       Daily Quantified times</uni-view>
                     <uni-view data-v-0f43bbff="" class="rate">5%</uni-view>
                   </uni-view>
