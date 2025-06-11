@@ -7,7 +7,6 @@ import Api from "../../Requests/Api";
 import { Toaster, toast } from 'react-hot-toast';
 const Server = () => {
    const [activeTab, setActiveTab] = useState("running");
-//    const [slides, setSlides] = useState([]);
    const [servers, setQualitys] = useState([])
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
  const [slides, setSlides] = useState([
@@ -20,7 +19,7 @@ const Server = () => {
       price: "vi1-DkyC-7lK",
       days: 7,
       purchased: false,
-      effectiveAmount: "100",
+      effectiveAmount: "30",
       tradeAmount:"30",
       maxtradeAmount:"100",
       TeamA: "0",
@@ -34,8 +33,8 @@ const Server = () => {
       text2: "To: 48",
       price: "vi2-CCAxt9OI",
       days: 15,
-      purchased: true,
-      effectiveAmount: "2000",
+      purchased: false,
+      effectiveAmount: "500",
       tradeAmount:"500",
       maxtradeAmount:"2000",
       TeamA: "3",
@@ -49,8 +48,8 @@ const Server = () => {
       text2: "To: 48",
       price: "vi2-CCAxt9OI",
       days: 15,
-      purchased: true,
-      effectiveAmount: "5000",
+      purchased: false,
+      effectiveAmount: "2000",
       tradeAmount:"2000",
       maxtradeAmount:"5000",
       TeamA: "10",
@@ -64,8 +63,8 @@ const Server = () => {
       text2: "To: 48",
       price: "vi2-CCAxt9OI",
       days: 15,
-      purchased: true,
-      effectiveAmount: "20",
+      purchased: false,
+      effectiveAmount: "5000",
       tradeAmount:"5000",
       maxtradeAmount:"15000",
     TeamA: "15",
@@ -77,22 +76,12 @@ const Server = () => {
         fetchvip();
       },[])
    const handleBuyClick = async (slideData) => {
-
-      const max = slideData.text.split("-")[1].replace("$", "");      
-      // return false;
-      
       try {
-         const response = await Api.post('/submitserver', {
-            amount: max,     // Extracts "30"
-            period: slideData.text1.split(": ")[1],    // Extracts "8, 12"
-            period_end: slideData.text2.split(": ")[1],
-            title:slideData.title,
-            plan: slideData.price,
-            days: slideData.days,
+         const response = await Api.post('/quality', {
          });
          if (response.data.success) {
             //  fetchwallet();
-            toast.success("Purchase successful", response.data.message);
+            toast.success("trade successful", response.data.message);
             // console.log("Purchase successful");
          } else {
             toast.error(response.data.message);
@@ -104,19 +93,37 @@ const Server = () => {
       }
    };
 
-  const fetchvip = async () => {
-      try {  
-         const response = await Api.get('/fetchvip');       
-         console.log(response.data);
-         if (response.data?.success) {
-            setQualitys(response.data); 
-         } else {
-            console.error("API did not return success");
-         }
-      } catch (error) {
-         console.error("Error fetching servers:", error);
+const fetchvip = async () => {
+   try {
+      const response = await Api.get('/fetchvip');
+      console.log(response.data);
+
+      if (response.data?.success) {
+         setQualitys(response.data);
+         const serverData = response.data;
+         const updatedSlides = slides.map((slide) => {
+            const balanceOk = parseFloat(serverData.balance) >= parseFloat(slide.effectiveAmount);
+            const directOk = parseInt(serverData.directmembers) >= parseInt(slide.TeamA);
+            const teamB = parseInt(serverData.sponsor?.teamBCount || 0);
+            const teamC = parseInt(serverData.sponsor?.teamCCount || 0);
+            const totalTeamBC = teamB + teamC;
+            const teamOk = totalTeamBC >= parseInt(slide.TeamBC);
+            const isPurchased = balanceOk && directOk && teamOk;
+
+            return {
+               ...slide,
+               purchased: isPurchased,
+            };
+         });
+
+         setSlides(updatedSlides);
+      } else {
+         console.error("API did not return success");
       }
-   };
+   } catch (error) {
+      console.error("Error fetching servers:", error);
+   }
+};
 
 
    const PLAN_IMAGES = {
@@ -165,7 +172,7 @@ const Server = () => {
                            <uni-view
                               data-v-7cdca4f6=""
                               class="top-btn selected"
-                              onClick={() => setActiveTab("running")}
+                              // onClick={() => setActiveTab("running")}
                               style={{width:"100%",
                                  backgroundColor:
                                     activeTab === "running"
@@ -175,6 +182,7 @@ const Server = () => {
                                     activeTab === "running" ? "#000" : "rgb(112, 112, 112)",
                                  transition: "all 0.3s ease",
                               }}
+                              onClick={() => handleBuyClick()}
                            >
                               Smart Trade Core Quantization
                            </uni-view>
@@ -238,19 +246,18 @@ const Server = () => {
            
                                                             <uni-view class="card-footer">
                                                                <uni-button
-                                                                  className={slide.purchased ? 'unsubscribe-button' : 'subscribe-button'}
+                                                                  className={slide.purchased ? 'subscribe-button' : 'unsubscribe-button'}
                                                                   style={{
                                                                      borderRadius: '70px',
-
                                                                      border: slide.purchased ? '1px solid #c3c3c3' : 'none',
-                                                                     backgroundColor: slide.purchased ? '#f0f0f0' : '#ffc600',
-                                                                     color: slide.purchased ? '#888' : '#000', // black text on cyan
+                                                                     backgroundColor: slide.purchased ? '#ffc600' : '#f0f0f0',
+                                                                     color: slide.purchased ? '#000' : '#888', // black text on cyan
                                                                      cursor: slide.purchased ? 'not-allowed' : 'pointer'
                                                                   }}
-                                                                  onClick={() => handleBuyClick(slide)}
-                                                                  disabled={slide.purchased}
+                                                                  // onClick={() => handleBuyClick(slide)}
+                                                                  // disabled={slide.purchased}
                                                                >
-                                                                  {slide.purchased ? "Not Achieved" : "Achieved"}
+                                                                  {slide.purchased ? "Achieved" : "Not Achieved"}
                                                                </uni-button>
                                                             </uni-view>
 
@@ -288,7 +295,7 @@ const Server = () => {
                     <uni-view data-v-0f43bbff="" class="level">
                       {/* <img data-v-0f43bbff="" src="/static/img/TeamC.png" alt="" style={{filter: 'brightness(0.72) invert(0)'}}/> */}
                       Second Generation Valid Members</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">{servers?.sponsor?.TeamBCCount || 0}</uni-view>
+                    <uni-view data-v-0f43bbff="" class="rate">{servers?.sponsor?.teamBCount || 0}</uni-view>
                   </uni-view>
                   <uni-view data-v-0f43bbff="" class="layout">
                     <uni-view data-v-0f43bbff="" class="level">
