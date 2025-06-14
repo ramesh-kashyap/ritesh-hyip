@@ -20,6 +20,9 @@ const NodeDetails = () => {
   const handleOpenTelegram = () => {
     window.open('https://t.me/AidenSabestin', '_blank');
   };
+  const handleOpenTelegram = () => {
+    window.open('https://t.me/AidenSabestin', '_blank');
+  };
   
   useEffect(()=>{
     fetchserve();
@@ -71,6 +74,7 @@ const NodeDetails = () => {
         }
     };
     
+    
 
   return (
 
@@ -120,8 +124,10 @@ const NodeDetails = () => {
                 <uni-view data-v-3dcfa33c="" class="two-group">
                   <uni-view data-v-3dcfa33c="" class="item">                    
                     {/* <Link to="/server-commission" style={{ textDecorationLine: 'none',filter:'' }}> */}
+                    {/* <Link to="/server-commission" style={{ textDecorationLine: 'none',filter:'' }}> */}
                     <uni-view data-v-3dcfa33c="" class="title">Team Income</uni-view>
                     <uni-view data-v-3dcfa33c="" translate="no" class="value"><img data-v-3dcfa33c="" src="/static/img/dollar.png" alt="" />$ {serverc}</uni-view>
+                    {/* </Link> */}
                     {/* </Link> */}
 
                   </uni-view>
@@ -189,20 +195,23 @@ const NodeDetails = () => {
 
                 {/* <Link to="/payment-password" style={{ textDecorationLine: 'none' }}> */}
                 <uni-view data-v-3dcfa33c="" class="invite-box" onClick={handleOpenTelegram} >
-                  <img data-v-3dcfa33c="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAxCAYAAABznEEcAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJfSURBVHgB7ZmLUcMwDEBVjgHKBmEC2ICMABOQDSgTwAZ0A2ACYIJ0g8IECRO0Gwipdqjq2nU+dpre5d3pmuZjSZY/sg0wMjIimUAEEDGhn6mWivVkMvmGoUJGT0lmJDnJCg+zJHklSWEIsCHa8LYUJJmOXO/GJzWNL7T4osPvZNAXpOzBYRTfm5Pc2moWVZPjyFXNzsYHxo4KKXixKGaDUmgIqmi+OaKSQAxQdUaz5mfQEe1MYSn7GkJiiUDw2qLynqPpoIKejMJ5iJxCBByOdNOlQx22UL9O05EX6ALujiLhwuvXOzccSaENqCYhSQY9gWo4LoTuHNpgRgF6xlKJaZPvbX0hgyNgRGPe9OP5MaMg7JgJO1ZNP85b10BAdN/wNqkzx/fy5RJVzpNAT2jjecZmKcWjerM4f4xuXmM7g+4Ec6O/biEpHqbAeDP2k0e3dai1NafE+F+SrI3nnRM/E10xGRzWba08V5/4L4TWxZckF3T9Lu6HzTAVKexWIOu9pN9Hca+VE5KFuL6C8EgDufJKqEkTJwbL6MRQaOLEzkYYDIhzz/PNDgWoUeNB3P+F8JTimhNQXgx9kdyI+/UqzzNjV6QQAfTvZdVfV+D+ykryDJFA+86H5LNpgbwoWeJ2Fy/HHvZPcbsftbQ4FDxTiA7u53EJnBo6GhVLODVwP6PN4JQgg+8NB9rtdhwLVIsiSXEyfQHdBzbetN83Y3c1jFMVlxHVmR6n9anlPZ6d7456zqfHe98JkYt8EE0I93fw6hqfQUOiHAEzuinx7oSvTXNz+SFZUNNZwMjIyAjzB2JlUsm70cvHAAAAAElFTkSuQmCC" alt="" />
+                  <img data-v-3dcfa33c="" src="/static/img/isupport.png" alt="" />
                   <uni-view data-v-3dcfa33c="" class="invite">
                     <uni-view data-v-3dcfa33c="" class="title">Customer Support</uni-view>
                     <uni-view data-v-3dcfa33c="" class="text">Lets Convenience with Our team</uni-view>
                   </uni-view>
                 </uni-view>
                 {/* </Link> */}
+                {/* </Link> */}
 
+                {/* <uni-view data-v-3dcfa33c="" class="invite-box">
                 {/* <uni-view data-v-3dcfa33c="" class="invite-box">
                   <img data-v-3dcfa33c="" src="/static/img/chatbox.png" alt="" />
                   <uni-view data-v-3dcfa33c="" class="invite">
                     <uni-view data-v-3dcfa33c="" class="title">Online Chat</uni-view>
                     <uni-view data-v-3dcfa33c="" class="text">Need Helt LEt Chat with A</uni-view>
                   </uni-view>
+                </uni-view> */}
                 </uni-view> */}
                 <uni-view data-v-3dcfa33c="" class="logout" onClick={handleLogout}>Logout</uni-view>
 
