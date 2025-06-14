@@ -185,7 +185,7 @@ const fetchvip = async () => {
                                               </Link>                    
                                               </uni-view>
                                             <uni-view data-v-35b9a113="" data-v-3dcfa33c="" class="uni-col uni-col-12" style={{ paddingLeft: '0px', paddingRight: '0px' }}>
-                                              <uni-view data-v-3dcfa33c="" class="page-title">Trade</uni-view>
+                                              <uni-view data-v-3dcfa33c="" class="page-title">Quantify</uni-view>
                                             </uni-view>
                                             <uni-view data-v-35b9a113="" data-v-3dcfa33c="" class="uni-col uni-col-6" style={{ paddingLeft: '0px', paddingRight: '0px' }}>
                                               <Link to="/notice">

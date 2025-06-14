@@ -141,9 +141,9 @@ const Dashboard = () => {
 
 
    const faqData = [
-      { question: 'How to Choose the Right Server?', answer: 'Consider your investment amount and trading frequency.Review server specifications and performance metrics.Compare pricing plans and features.Start with a basic plan and upgrade as needed.' },
-      { question: 'How is Fund Security Ensured?', answer: 'Multi-signature cold wallet storage.Regular security audits and penetration testing.Insurance coverage for digital assets.24/7 security monitoring and risk management.' },
-      { question: 'Withdrawal Guidelines', answer: 'Minimum withdrawal amounts apply.Processing time varies by cryptocurrency.Two-factor authentication required for all withdrawals.' },
+      { question: 'What is Zylo AI?', answer: 'Zylo AI is a quantification-based crypto trading platform that uses advanced algorithms and AI models to generate daily profits through high-frequency and arbitrage strategies' },
+      { question: 'How does Zylo AI generate profit?', answer: 'Zylo AI leverages real-time market data, machine learning, and automated trading bots to execute high-speed trades with minimal latency. Profits are shared with users through structured VIP plans.' },
+      { question: 'What licenses and legal registrations does Zylo AI have?', answer: 'Zylo AI LTD is a fully registered and legally incorporated company in the United Kingdom.' },
    ];
    const [openIndex, setOpenIndex] = useState(null);
 
