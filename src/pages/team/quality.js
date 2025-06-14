@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Api from "../../Requests/Api";
 import { Toaster, toast } from 'react-hot-toast';
+import SmartTradeQuantization from "./SmartTradeQuantization";
+import { Link } from "react-router-dom";
 const Server = () => {
    const [activeTab, setActiveTab] = useState("running");
    const [servers, setQualitys] = useState([])
@@ -75,10 +77,9 @@ const Server = () => {
     useEffect(()=>{
         fetchvip();
       },[])
-   const handleBuyClick = async (slideData) => {
+   const handleBuyClick = async () => {
       try {
-         const response = await Api.post('/quality', {
-         });
+         const response = await Api.get('/tradeOn');
          if (response.data.success) {
             //  fetchwallet();
             toast.success("trade successful", response.data.message);
@@ -157,7 +158,18 @@ const fetchvip = async () => {
                         class="page" style={{paddingBottom:90}}>
                         <uni-view data-v-7542ab04="" class="ellipse"></uni-view>
                         <uni-view
-                           data-v-7542ab04="" class="page-title">Trade</uni-view>
+                           data-v-7542ab04="" class="page-title">Trade
+                           
+                             {/* <uni-view data-v-35b9a113="" data-v-3dcfa33c="" class="uni-col uni-col-6" style={{ paddingLeft: '0px', paddingRight: '0px' }}>
+                                                 <Link to="/notice">
+                                                   <uni-view data-v-3dcfa33c="" class="set"><img data-v-3dcfa33c="" src="/static/img/belliy.png" alt="" style={{ width: '35px',filter:'brightness(0.72) invert(0) ' }} /></uni-view>
+                           
+                                                 </Link>
+                                               </uni-view> */}
+
+                           </uni-view>
+
+                          
                         <uni-view data-v-7542ab04=""
                            class="top-card">
                            <img data-v-7542ab04="" src="/static/img/server-icon.png" alt="" />
@@ -168,27 +180,20 @@ const fetchvip = async () => {
                               experience and greater advantages
                            </uni-view>
                         </uni-view>
-                        <uni-view data-v-7cdca4f6="" class="top-group" style={{ marginTop: '10px' }}>
-                           <uni-view
-                              data-v-7cdca4f6=""
-                              class="top-btn selected"
-                              // onClick={() => setActiveTab("running")}
-                              style={{width:"100%",
-                                 background:
-                                    activeTab === "running"
-                                       ? "linear-gradient(to bottom, #ffb400, #ffe793)"
-                                       : "linear-gradient(to bottom, #ffb400, #ffe793)",
-                                 color:
-                                    activeTab === "running" ? "#000" : "rgb(112, 112, 112)",
-                                 transition: "all 0.3s ease",
-                              }}
-                              onClick={() => handleBuyClick()}
-                           >
-                              Smart Trade Core Quantization
-                           </uni-view>
+                       
+
+                           <SmartTradeQuantization/>
+
+                                 
+                                                   
 
 
-                        </uni-view>
+  <uni-view data-v-7cdca4f6="" class="top-group" style={{ width:'max-content',margin:'0px auto',padding:'8px',marginTop: '10px' }}>
+   <span data-v-d32894b1="" class="text-$primary text-14px" style={{color:'#ffcd58'}}>Transaction Record &gt;&gt;</span>
+</uni-view>
+
+                       
+                       
                         <uni-view data-v-7542ab04="" class="container" >
                            {/* {activeTab  ( */}
 
