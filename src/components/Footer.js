@@ -70,7 +70,7 @@ export default function Footer() {
                       lineHeight: 'normal',
                       marginTop: '3px',
                     }}>
-                    {t('Quality')} </div>
+                    Quantify </div>
                 </div>
                 </Link>
             </div>
