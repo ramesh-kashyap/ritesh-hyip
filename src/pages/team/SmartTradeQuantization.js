@@ -110,7 +110,7 @@ export default function SmartTradeQuantization({ coin = 'SOL' }) {
                 ? "linear-gradient(to bottom, #ffb400, #ffe793)"
                 : "linear-gradient(to bottom, #ffb400, #ffe793)",
             color:
-            activeTab === "running" ? "#000" : "rgb(112, 112, 112)",
+            activeTab === "running" ? "#000" : "rgb(0, 0, 0)",
             transition: "all 0.3s ease",fontWeight:'700'
         }}
         onClick={() => {

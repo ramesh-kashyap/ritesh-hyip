@@ -136,24 +136,40 @@ const Refer = () => {
                   </uni-view>
                 </uni-view>
               
-                {/* <uni-view data-v-0f43bbff="" class="global-box-title">Global Partner</uni-view>
-                <uni-view data-v-0f43bbff="" class="global-box">
-                  <uni-view data-v-0f43bbff="" class="global-title">Commission Rate:</uni-view>
-                  <uni-view data-v-0f43bbff="" class="global-text">Increase 0.5% based on the original L1-L5 commission</uni-view>
-                  <uni-view data-v-0f43bbff="" class="global-title">Team Benefits:</uni-view>
-                  <uni-view data-v-0f43bbff="" class="global-text">Enjoy 1.5% of the net profit of unlimited agent team transactions (second-level authorization is allowed)</uni-view>
-                  <uni-view data-v-0f43bbff="" class="global-title">Quarterly Incentives:</uni-view>
-                  <uni-view data-v-0f43bbff="" class="global-text">Exclusive quarterly performance bonus and global profit plan participation</uni-view>
-                  <uni-view data-v-0f43bbff="" class="global-title">Exclusive Benefits:</uni-view>
-                  <uni-view data-v-0f43bbff="" class="global-text">1.Co-branding and global market development rights</uni-view>
-                  <uni-view data-v-0f43bbff="" class="global-text">2.Exclusive consultant team support and business co-construction</uni-view>
-                  <uni-view data-v-0f43bbff="" class="global-text">3.Priority for product internal testing and privileged API access</uni-view>
-                  <uni-view data-v-0f43bbff="" class="global-text">4.International conference co-organization &amp; global promotion material customization</uni-view>
-                  <uni-view data-v-0f43bbff="" class="global-title">Authorization Fees:</uni-view>
-                  <uni-view data-v-0f43bbff="" class="global-text">$200,000 (Global Exclusive Agent Identity Certification)</uni-view>
-                  <uni-view data-v-0f43bbff="" class="global-title">Limited Places:</uni-view>
-                  <uni-view data-v-0f43bbff="" class="global-text">We are looking for global partners with a common vision - let us work together to create the future of smart finance</uni-view>
-                </uni-view> */}
+                <uni-view data-v-0f43bbff="" class="rule-box">
+                  {/* <uni-view data-v-0f43bbff="" class="title">For the Synero managed strategy trading, a 30% commission is charged. However, to incentivize promotional cooperation, we will return 21% of the commission as a rebate to the promoters. The specific rebate ratios are as follows:</uni-view> */}
+                  <uni-view data-v-0f43bbff="" class="layout">
+                    <uni-view data-v-0f43bbff="" class="level">
+                      {/* <img data-v-0f43bbff="" src="/static/img/lv1.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
+                      Invite one for</uni-view>
+                    <uni-view data-v-0f43bbff="" class="rate">$100 - get $6</uni-view>
+                  </uni-view>
+                  <uni-view data-v-0f43bbff="" class="layout">
+                    <uni-view data-v-0f43bbff="" class="level">
+                      {/* <img data-v-0f43bbff="" src="/static/img/lv2.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
+                      Invite three for</uni-view>
+                    <uni-view data-v-0f43bbff="" class="rate">$100 - get 18</uni-view>
+                  </uni-view>
+                  <uni-view data-v-0f43bbff="" class="layout">
+                    <uni-view data-v-0f43bbff="" class="level">
+                      {/* <img data-v-0f43bbff="" src="/static/img/lv3.png" alt="" style={{filter: 'brightness(0.72) invert(0)'}}/> */}
+                      Invite -</uni-view>
+                    <uni-view data-v-0f43bbff="" class="rate"> 10 for $100 - get - $60</uni-view>
+                  </uni-view>
+                  {/* <uni-view data-v-0f43bbff="" class="layout">
+                    <uni-view data-v-0f43bbff="" class="level">
+                      <img data-v-0f43bbff="" src="/static/img/lv4.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} />
+                      Members invited by Lv3</uni-view>
+                    <uni-view data-v-0f43bbff="" class="rate">3%</uni-view>
+                  </uni-view>
+                  <uni-view data-v-0f43bbff="" class="layout">
+                    <uni-view data-v-0f43bbff="" class="level">
+                      <img data-v-0f43bbff="" src="/static/img/lv5.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} />
+                      Members invited by Lv4</uni-view>
+                    <uni-view data-v-0f43bbff="" class="rate">1%</uni-view>
+                  </uni-view> */}
+                </uni-view>
+ 
               </uni-view>
             </uni-page-body>
           </uni-page-wrapper>

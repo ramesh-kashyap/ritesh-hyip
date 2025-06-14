@@ -189,7 +189,16 @@ const fetchvip = async () => {
                           
                         <uni-view data-v-7542ab04=""
                            class="top-card">
-                           <img data-v-7542ab04="" src="/static/img/server-icon.png" alt="" />
+                              <div class="pyramid-loader">
+  <div class="wrapper">
+    <span class="side side1"></span>
+    <span class="side side2"></span>
+    <span class="side side3"></span>
+    <span class="side side4"></span>
+    <span class="shadow"></span>
+  </div>
+</div>
+                           {/* <img data-v-7542ab04="" src="/static/img/server-icon.png" alt="" /> */}
                            <uni-view
                               data-v-7542ab04="" class="title">Start Trading Now!</uni-view>
                            <uni-view
@@ -244,7 +253,7 @@ const fetchvip = async () => {
   <span style={{ fontSize: '30px', lineHeight: '17px', color: 'rgb(36 33 33 / 50%)', fontWeight:700, marginBottom:10 }}>
     {slide.title}
   </span>
-  <img src={`/static/img/${slide.price}.png`} alt="plan" style={{ width: '120px', marginLeft:100 }} />
+  <img src={`/static/img/${slide.price}.png`} alt="plan" style={{ width: '120px',height:'100px', marginLeft:100 }} />
 </uni-text>
 
                                                             </uni-view>
