@@ -15,6 +15,9 @@ const NodeDetails = () => {
     localStorage.removeItem("authToken");
     navigate("/login");
   };
+  const handleOpenTelegram = () => {
+    window.open('https://t.me/AidenSabestin', '_blank');
+  };
   
   useEffect(()=>{
     fetchserve();
@@ -65,6 +68,7 @@ const NodeDetails = () => {
             setError(err.response?.data?.error || "Error fetching income");
         }
     };
+    
 
   return (
 
@@ -111,10 +115,10 @@ const NodeDetails = () => {
                 </uni-view>
                 <uni-view data-v-3dcfa33c="" class="two-group">
                   <uni-view data-v-3dcfa33c="" class="item">                    
-                    <Link to="/server-commission" style={{ textDecorationLine: 'none',filter:'' }}>
+                    {/* <Link to="/server-commission" style={{ textDecorationLine: 'none',filter:'' }}> */}
                     <uni-view data-v-3dcfa33c="" class="title">Team Income</uni-view>
                     <uni-view data-v-3dcfa33c="" translate="no" class="value"><img data-v-3dcfa33c="" src="/static/img/dollar.png" alt="" />$ {serverc}</uni-view>
-                    </Link>
+                    {/* </Link> */}
 
                   </uni-view>
 
@@ -178,23 +182,23 @@ const NodeDetails = () => {
                 </uni-view>
                 </Link> */}
 
-                <Link to="/payment-password" style={{ textDecorationLine: 'none' }}>
-                <uni-view data-v-3dcfa33c="" class="invite-box">
+                {/* <Link to="/payment-password" style={{ textDecorationLine: 'none' }}> */}
+                <uni-view data-v-3dcfa33c="" class="invite-box" onClick={handleOpenTelegram} >
                   <img data-v-3dcfa33c="" src="/static/img/isupport.png" alt="" />
                   <uni-view data-v-3dcfa33c="" class="invite">
                     <uni-view data-v-3dcfa33c="" class="title">Customer Support</uni-view>
                     <uni-view data-v-3dcfa33c="" class="text">Lets Convenience with Our team</uni-view>
                   </uni-view>
                 </uni-view>
-                </Link>
+                {/* </Link> */}
 
-                <uni-view data-v-3dcfa33c="" class="invite-box">
+                {/* <uni-view data-v-3dcfa33c="" class="invite-box">
                   <img data-v-3dcfa33c="" src="/static/img/chatbox.png" alt="" />
                   <uni-view data-v-3dcfa33c="" class="invite">
                     <uni-view data-v-3dcfa33c="" class="title">Online Chat</uni-view>
                     <uni-view data-v-3dcfa33c="" class="text">Need Helt LEt Chat with A</uni-view>
                   </uni-view>
-                </uni-view>
+                </uni-view> */}
                 <uni-view data-v-3dcfa33c="" class="logout" onClick={handleLogout}>Logout</uni-view>
 
               </uni-view>
