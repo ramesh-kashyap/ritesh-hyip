@@ -94,7 +94,7 @@ const Team = () => {
                     <uni-view data-v-1011963f="" class="first">
                       <uni-view data-v-1011963f="" class="left">
                         <uni-view data-v-1011963f="" class="ava-box">
-                          <img data-v-1011963f="" src="/static/img/image.png" alt=""/>
+                          <img data-v-1011963f="" src="fav.png" alt=""/>
                             <uni-view data-v-1011963f="" class="name-box">
                               {/* <uni-view data-v-1011963f="" class="name">arshadkhanllc11</uni-view> */}
                               <uni-view data-v-1011963f="" class="uid">First generation data</uni-view>
@@ -136,7 +136,7 @@ const Team = () => {
                     <uni-view data-v-1011963f="" class="first">
                       <uni-view data-v-1011963f="" class="left">
                         <uni-view data-v-1011963f="" class="ava-box">
-                          <img data-v-1011963f="" src="/static/img/image.png" alt=""/>
+                          <img data-v-1011963f="" src="fav.png" alt=""/>
                             <uni-view data-v-1011963f="" class="name-box">
                               {/* <uni-view data-v-1011963f="" class="name">arshadkhanllc11</uni-view> */}
                               <uni-view data-v-1011963f="" class="uid">Second generation data</uni-view>
@@ -176,7 +176,7 @@ const Team = () => {
                     <uni-view data-v-1011963f="" class="first">
                       <uni-view data-v-1011963f="" class="left">
                         <uni-view data-v-1011963f="" class="ava-box">
-                          <img data-v-1011963f="" src="/static/img/image.png" alt=""/>
+                          <img data-v-1011963f="" src="fav.png" alt=""/>
                             <uni-view data-v-1011963f="" class="name-box">
                               {/* <uni-view data-v-1011963f="" class="name">arshadkhanllc11</uni-view> */}
                               <uni-view data-v-1011963f="" class="uid">Third  generation data </uni-view>
@@ -216,7 +216,7 @@ const Team = () => {
                     <uni-view data-v-1011963f="" class="first">
                       <uni-view data-v-1011963f="" class="left">
                         <uni-view data-v-1011963f="" class="ava-box">
-                          <img data-v-1011963f="" src="/static/img/image.png" alt=""/>
+                          <img data-v-1011963f="" src="fav.png" alt=""/>
                             <uni-view data-v-1011963f="" class="name-box">
                               {/* <uni-view data-v-1011963f="" class="name">arshadkhanllc11</uni-view> */}
                               <uni-view data-v-1011963f="" class="uid">Fourth  generation data</uni-view>
@@ -256,7 +256,7 @@ const Team = () => {
                     <uni-view data-v-1011963f="" class="first">
                       <uni-view data-v-1011963f="" class="left">
                         <uni-view data-v-1011963f="" class="ava-box">
-                          <img data-v-1011963f="" src="/static/img/image.png" alt=""/>
+                          <img data-v-1011963f="" src="fav.png" alt=""/>
                             <uni-view data-v-1011963f="" class="name-box">
                               {/* <uni-view data-v-1011963f="" class="name">arshadkhanllc11</uni-view> */}
                               <uni-view data-v-1011963f="" class="uid">Fifth  generation data</uni-view>

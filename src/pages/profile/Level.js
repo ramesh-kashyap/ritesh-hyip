@@ -124,7 +124,7 @@ const Level = () => {
                         <uni-view data-v-10f20c32="" class="first">
                           <uni-view data-v-10f20c32="" class="left">
                             <uni-view data-v-10f20c32="" class="ava-box">
-                              <img data-v-10f20c32="" src="/static/img/image.png" alt="" />
+                              <img data-v-10f20c32="" src="fav.png" alt="" />
                               <uni-view data-v-10f20c32="" class="name-box">
                                 <uni-view data-v-10f20c32="" class="name">{user.name || "User"}</uni-view>
                                 <uni-view data-v-10f20c32="" class="uid"> {user.username}
@@ -135,11 +135,11 @@ const Level = () => {
                             </uni-view>
                           </uni-view>
                           <uni-view data-v-10f20c32="" class="right">
-                            <uni-view data-v-10f20c32="" class="value">${Number(user.userbalance,).toFixed(2)}
+                            <uni-view data-v-10f20c32="" class="value">${Number(user.package,).toFixed(2)}
                             </uni-view>
-                            <uni-view data-v-10f20c32="" class="title">Available Balance</uni-view>
-                            <uni-view data-v-10f20c32="" class="value">${user.runningTrade ? user.runningTrade.toFixed(2) : "0.00"}</uni-view>
-                            <uni-view data-v-10f20c32="" class="title">Trade Amount</uni-view>
+                            <uni-view data-v-10f20c32="" class="title">Total Deposits</uni-view>
+                            <uni-view data-v-10f20c32="" class="value">${user.todayCommission ? user.todayCommission.toFixed(2) : "0.00"}</uni-view>
+                            <uni-view data-v-10f20c32="" class="title">Today's Commission</uni-view>
                           </uni-view>
                         </uni-view>
                         <uni-view data-v-10f20c32="" class="h-line"style={{backgroundColor:'#bfbfbf'}}></uni-view>
@@ -148,20 +148,13 @@ const Level = () => {
                           <uni-view data-v-10f20c32="" class="value">0(0)</uni-view>
                         </uni-view> */}
                         <uni-view data-v-10f20c32="" class="layout">
-                          <uni-view data-v-10f20c32="" class="title">Yesterday's Commission(Trade)</uni-view>
-                          <uni-view data-v-10f20c32="" class="value">${user.trade_income ? user.trade_income.toFixed(2) : "0.00"}</uni-view>
+                          <uni-view data-v-10f20c32="" class="title">Yesterday's Commission</uni-view>
+                          <uni-view data-v-10f20c32="" class="value">${user.yesterdayCommission ? user.yesterdayCommission.toFixed(2) : "0.00"}</uni-view>
                         </uni-view>
+                       
                         <uni-view data-v-10f20c32="" class="layout">
-                          <uni-view data-v-10f20c32="" class="title">Yesterday's Commission(Server)</uni-view>
-                          <uni-view data-v-10f20c32="" class="value">{user.server_income.toFixed(4) || "0.00"}</uni-view>
-                        </uni-view>
-                        <uni-view data-v-10f20c32="" class="layout">
-                          <uni-view data-v-10f20c32="" class="title">Total Commission(Trade)</uni-view>
-                          <uni-view data-v-10f20c32="" class="value">{user.totalTradeIncome.toFixed(4) || "0.00"}</uni-view>
-                        </uni-view>
-                        <uni-view data-v-10f20c32="" class="layout">
-                          <uni-view data-v-10f20c32="" class="title">Total Commission(Server)</uni-view>
-                          <uni-view data-v-10f20c32="" class="value">{user.totalServerIncome.toFixed(4) || "0.00"}</uni-view>
+                          <uni-view data-v-10f20c32="" class="title">Total Commission</uni-view>
+                          <uni-view data-v-10f20c32="" class="value">${user.totalCommission.toFixed(2) || "0.00"}</uni-view>
                         </uni-view>
 
                       </uni-view>

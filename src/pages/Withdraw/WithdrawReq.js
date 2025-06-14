@@ -3,15 +3,22 @@ import { ChevronDown } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import Api from "../../Requests/Api";
 import { Toaster, toast } from 'react-hot-toast';
+import WithdrawalInfo from "./WithdrawalInfo";
 const WithdrawReq = () => {
   const [wallets, setWallets] = useState({ bep20: "", trc20: "" });
   const [selectedWallet, setSelectedWallet] = useState("");
+    const [adate, setAdate] = useState(null);
   const [amount, setAmount] = useState("");
   const [verificationCode, setVerificationCode] = useState("");
   const [availbal, setAvailableBal] = useState();
   const [walletType, setWalletType] = useState("");
   const navigate = useNavigate();
   const [cooldown, setCooldown] = useState(0);
+  const [detailChangeDate, setChangedDate] = useState(null);
+  const [unlockTime, setUnlockTime] = useState(null);
+  const [unlockHours, setUnlockHours] = useState(0);
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [pop, setPop] = useState(false);
   useEffect(() => {
     withfatch();
     withreq();
@@ -53,22 +60,39 @@ const WithdrawReq = () => {
   }, [cooldown]);
   const handleSubmit = async () => {
     try {
+       if (!amount || !walletType || !selectedWallet || !verificationCode) {
+      toast.error("All fields are required."); // Show error message
+      return;
+    }
+
       // Assuming you have a backend endpoint to process the withdrawal request
+      if(amount<30)
+      {
+        toast.error('Minimum withdrawal amount is 30');
+        return false;
+      }
+
+       if (isDisabled) {
+        setPop(true); // Set pop-up variable to true
+        return;
+      }
+
+
       const response = await Api.post("/process-withdrawal", {
         wallet: selectedWallet,
         type: walletType,
         amount: amount,
         verificationCode: verificationCode,
       });
-      if (response) {
-        toast.success("Withdrawal submitted successfully", response.data);
-        setSelectedWallet("");
-        setWalletType("");
+      if (response.data.success) {
+        toast.success(response.data.message);
+        // setSelectedWallet("");
+        // setWalletType("");
         setAmount("");
         setVerificationCode("");
+        withfatch();
       } else {
-        console.warn("Failed to process withdrawal:", response.data.message);
-
+        toast.error(response.data.message);
       }
     } catch (error) {
       toast.error("Error processing withdrawal", error);
@@ -79,6 +103,33 @@ const WithdrawReq = () => {
     try {
       const response = await Api.get("/withreq");
       if (response.data.success) {
+          const changedDate = response.data.detail_changed_date;
+        const addressDate = response.data.adate;
+        setChangedDate(changedDate);
+        setAdate(addressDate);
+
+        // Now process unlockTime calculation
+        if (addressDate) {
+          let baseDate = new Date(addressDate);
+          let unlockDate = new Date(baseDate);
+          unlockDate.setHours(unlockDate.getHours() + 24); // Add 96 hours (4 days)
+
+          if (changedDate) {
+            let changedDateObj = new Date(changedDate);
+            if (changedDateObj > unlockDate) {
+              unlockDate = new Date(changedDateObj);
+              unlockDate.setHours(unlockDate.getHours() + 48); // Add 48 hours (2 days)
+            }
+          }
+
+          const now = new Date();
+          const remainingTime = unlockDate - now;
+          const remainingHours = Math.floor(remainingTime / (1000 * 60 * 60)); // Convert milliseconds to hours
+          setUnlockTime(unlockDate);
+          setUnlockHours(remainingHours);
+          setIsDisabled(now < unlockDate);
+        }
+
         setWallets({
           bep20: response.data.bep20,
           trc20: response.data.trc20,
@@ -139,15 +190,15 @@ const WithdrawReq = () => {
 
           
         </uni-view>
-        <uni-view data-v-53c5f33f="" class="input-layer" style={{ marginTop: '10px' }}>
+        <uni-view data-v-53c5f33f="" class="input-layer" style={{ marginTop: '15px' }}>
           <uni-view data-v-53c5f33f="" class="input-title">Wallet Address<uni-view data-v-53c5f33f="" class="right" onClick={handleSuccess}><img data-v-53c5f33f="" src="  /static/img/add.png" alt="" style={{color:'#000',filter: 'brightness(0.72) invert(0)'}}/>Add New</uni-view></uni-view><uni-view data-v-30449abe="" data-v-53c5f33f="" class="uni-easyinput" style={{ color: 'rgb(255, 255, 255)' }}><uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border is-disabled " style={{ borderColor: '#ffc600', backgroundColor: 'unset' }}> 
               <uni-input data-v-30449abe="" class="uni-easyinput__content-input" >
           <div class="uni-input-wrapper">
             <div class="uni-input-placeholder uni-easyinput__placeholder-class" data-v-30449abe="" data-v-53c5f33f=""> </div>
-            <input disabled="disabled" style={{margin:'4px'}} maxlength="140" step="" enterkeyhint="done" autocomplete="off" value={selectedWallet} readOnly type="" class="uni-input-input" />
+            <input disabled="disabled" style={{margin:'16px'}} maxlength="140" step="" enterkeyhint="done" autocomplete="off" value={selectedWallet} readOnly type="" class="uni-input-input" />
           </div>
         </uni-input>   </uni-view></uni-view></uni-view>
-        <uni-view data-v-53c5f33f="" class="input-layer" style={{ marginTop: '10px' }}><uni-view data-v-53c5f33f="" class="input-title">Amount</uni-view>
+        <uni-view data-v-53c5f33f="" class="input-layer" style={{ marginTop: '15px' }}><uni-view data-v-53c5f33f="" class="input-title">Amount</uni-view>
         <uni-view data-v-30449abe="" data-v-53c5f33f="" class="uni-easyinput" style={{ color: 'rgb(255, 255, 255)' }}><uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{ borderColor: '#ffc600', backgroundColor: 'unset' }}>   <uni-input data-v-30449abe="" class="uni-easyinput__content-input" style={{ paddingLeft: '10px' }}>
           <div class="uni-input-wrapper">
             <div class="uni-input-placeholder uni-easyinput__placeholder-class" data-v-30449abe="" data-v-53c5f33f=""></div>
@@ -195,13 +246,78 @@ const WithdrawReq = () => {
 
         <uni-view data-v-53c5f33f="" class="submit" onClick={handleSubmit}>Submit</uni-view>
         </uni-view>
-        <uni-view data-v-53c5f33f="" class="tips-box">
-          <uni-view data-v-53c5f33f="" class="title">The minimum withdrawal amount is $10.</uni-view>
-        {/* <uni-view data-v-53c5f33f="" class="text">A maximum of one withdrawal is allowed per day.</uni-view> */}
-        <uni-view data-v-53c5f33f="" class="title">The maximum you can withdraw per day is $5,000.</uni-view>
-        <uni-view data-v-53c5f33f="" class="text">All withdrawal requests are processed within 24 to 48 hours.</uni-view>
-        {/* <uni-view data-v-53c5f33f="" class="text">Withdrawal of USDT: 8% handling fee will be charged.</uni-view> */}
-        </uni-view>
+
+
+      {pop && (
+  <div
+    className="modal-overlay"
+    style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: 'rgba(0,0,0,0.8)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 9999
+    }}
+  >
+    <div
+      className="modal"
+      style={{
+        background: '#1c1c1c',
+        padding: '1rem',
+        borderRadius: '1rem',
+        textAlign: 'center',
+        maxWidth: '350px',
+        width: '90%',
+        color: '#fff',
+        boxShadow: '0 0 20px rgba(0, 0, 0, 0.5)',
+      }}
+    >
+      <div
+        style={{
+          background: 'rgb(194 146 43)',
+          width: '70px',
+          height: '70px',
+          borderRadius: '50%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          margin: '0 auto 1rem auto',
+        }}
+      >
+        <img src="/static/img/icons8-warning-48.png"/>      </div>
+      <h2 style={{ fontWeight: 'bold', fontSize: '1.25rem', marginBottom: '0.25rem' }}>
+     withdrawal can be made
+      </h2>
+      <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>
+        Please note that your first withdrawal can<br></br>be made only after {unlockHours} hours at {unlockTime?.toLocaleString()}.
+      </p>
+      
+      <button
+        onClick={() => setPop(false)}
+        style={{
+          background: 'rgb(194 146 42)',
+          border: 'none',
+          padding: '0.75rem 2rem',
+          borderRadius: '0.5rem',
+          color: '#fff',
+          fontWeight: 'bold',
+          fontSize: '1rem',
+          cursor: 'pointer'
+        }}
+      >
+        Confirm
+      </button>
+    </div>
+  </div>
+)}
+
+
+       <WithdrawalInfo/>
         </uni-view>
         </uni-page-body></uni-page-wrapper></uni-page>
     </uni-app>

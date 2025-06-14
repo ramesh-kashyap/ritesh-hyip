@@ -56,7 +56,7 @@ const Whistory = () => {
                         <p>Loading...</p>
                     ) : withdraws.length === 0 ? (
                      // style={{ display: 'none' }} 
-                     <uni-view data-v-b0a5c882="" class="content" ><uni-view data-v-b0a5c882="" class="nodata"><img data-v-b0a5c882="" src="/static/img/nodata.png" alt="" />No Data</uni-view></uni-view>
+                     <uni-view data-v-b0a5c882="" class="content" ><uni-view data-v-b0a5c882="" class="nodata">No Data</uni-view></uni-view>
                   ) : (
                         <uni-view data-v-b0a5c882="" class="content">
 
@@ -64,7 +64,7 @@ const Whistory = () => {
 
                                 <uni-view data-v-b0a5c882="" class="item">
                                     <uni-view data-v-b0a5c882="" class="first">
-                                        <uni-view data-v-b0a5c882="" class="left">{withdraw.txn_id}</uni-view>
+                                        <uni-view data-v-b0a5c882="" class="left">Status</uni-view>
                                         <uni-view
                                             data-v-b0a5c882=""
                                             style={{
@@ -83,7 +83,7 @@ const Whistory = () => {
                                     </uni-view>
                                     <uni-view data-v-b0a5c882="" class="layout">
                                         <uni-view data-v-b0a5c882="" class="title">Amount</uni-view>
-                                        <uni-view data-v-b0a5c882="" class="value">{withdraw.payable_amt} USDT</uni-view>
+                                        <uni-view data-v-b0a5c882="" class="value">{withdraw.amount} USDT</uni-view>
                                     </uni-view>
                                     <uni-view data-v-b0a5c882="" class="layout">
                                         <uni-view data-v-b0a5c882="" class="title">Type</uni-view>

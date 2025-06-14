@@ -118,7 +118,7 @@ const Level = () => {
                 {activeTab === "running" ? (
                   <uni-view data-v-b7dd60dc="" class="history-box">
 
-{users.map((user, index) => (
+  {users.map((user, index) => (
 
 
 

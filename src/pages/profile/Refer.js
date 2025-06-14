@@ -11,7 +11,7 @@ const Refer = () => {
   const [inviteLink, setInviteLink] = useState(null);
   const [username, setUsername] = useState(null);
   const [serR, setServerR] = useState(null);
-  const [income, setIncome] = useState([]);
+  const [incomeData, setIncome] = useState([]);
   const [error, setError] = useState("");
  
   const fetchUsers = async () => {
@@ -63,7 +63,7 @@ const Refer = () => {
   };
   const fetchteam = async () => {        
     try {            
-        const response =await Api.get('/team');
+        const response =await Api.get('/getTeamRecord');
         if(response.data){
           setIncome(response.data);
         }
@@ -96,14 +96,14 @@ const Refer = () => {
                     <uni-view data-v-35b9a113="" data-v-0f43bbff="" class="uni-col uni-col-6" style={{ paddingLeft: '0px', paddingRight: '0px' }}></uni-view>
                   </uni-view>
                 </uni-view>
-                <uni-view data-v-0f43bbff="" class="info-box" style={{background: "linear-gradient(to right, rgb(255, 255, 255), rgb(255, 198, 0))", borderRadius:20,}}>
+                <uni-view data-v-0f43bbff="" class="info-box" style={{background: "linear-gradient(135deg, #141417, #1B1B1E)", border:'.5px solid rgba(82, 97, 98)',}}>
                   <uni-view data-v-0f43bbff="" class="qrcode-box">
                     <uni-view data-v-cd74eaf4="" data-v-0f43bbff="" class="tki-qrcode"> 
                       <uni-view data-v-0f43bbff="" class=""><img data-v-0f43bbff="" src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${window.location.origin}/register?sponsor=${username}`} alt="" /></uni-view> 
                     </uni-view>
                   </uni-view>
-                  <uni-view data-v-0f43bbff="" class="title" style={{color:"#000"}}>Invitation Registration Link</uni-view>
-                  <uni-view data-v-0f43bbff="" class="link" style={{color:"#000"}}>
+                  <uni-view data-v-0f43bbff="" class="title" >Invitation Registration Link</uni-view>
+                  <uni-view data-v-0f43bbff="" class="link" >
                     {inviteLink ? inviteLink : "Invite link not available"}
                     <div onClick={() => copyToClipboard(inviteLink)} style={{ marginLeft: '10px', cursor: 'pointer' }}>
                       <img src="/static/img/copy.png" style={{ filter: 'brightness(0.1) invert(1)',width: '22px'}}alt="c"/>
@@ -112,11 +112,11 @@ const Refer = () => {
  
  
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
-                    <uni-view data-v-0f43bbff="" class="title" style={{color:"#000", fontSize: '18px', fontWeight: 'bold', marginBottom: '10px' }}>
+                    <uni-view data-v-0f43bbff="" class="title" style={{fontSize: '18px', fontWeight: 'bold', marginBottom: '10px' }}>
                       Your Invitation Code
                     </uni-view>
                     <uni-view data-v-06ae08d2 class="balance-btn" style={{width:'75%', color:"#000", display: 'flex', alignItems: 'center',color:'black', fontSize: '16px', marginBottom: '10px' }}>
-                      <span style={{color:"#000"}}>{username ? username : "Username not available"}</span>
+                      <span >{username ? username : "Username not available"}</span>
                        <div onClick={() => copyToClipboard(username)} style={{ marginLeft: '10px', cursor: 'pointer' }}>
                       <img src="/static/img/copy.png" style={{ filter: 'brightness(0.1) invert(1)',width: '22px' }}alt="c"/>
                     </div>
@@ -125,49 +125,17 @@ const Refer = () => {
                 </uni-view>
                 <uni-view data-v-0f43bbff="" class="two-btn">
                   <uni-view data-v-0f43bbff="" class="btn-item">
-                    <uni-view data-v-0f43bbff="" class="imgbox"><img data-v-0f43bbff="" src="/static/img/dollar.png" alt="" style={{filter: 'brightness(0) saturate(100%) invert(91%) sepia(72%) saturate(2675%) hue-rotate(1deg) brightness(100%) contrast(101%)'}} /></uni-view>
-                    <uni-view data-v-0f43bbff="" class="value">$ {serR}</uni-view>
+                    <uni-view data-v-0f43bbff="" class="imgbox"><img data-v-0f43bbff="" src="/static/img/dollar.png" alt="" /></uni-view>
+                    <uni-view data-v-0f43bbff="" class="value">$ {incomeData.data?.totalLevelIncome}</uni-view>
                     <uni-view data-v-0f43bbff="" class="title">Total Referral Commission</uni-view>
                   </uni-view>
                   <uni-view data-v-0f43bbff="" class="btn-item">
-                    <uni-view data-v-0f43bbff="" class="imgbox"><img data-v-0f43bbff="" src="/static/img/people2.png" alt=""style={{filter: 'brightness(0) saturate(100%) invert(91%) sepia(72%) saturate(2675%) hue-rotate(1deg) brightness(100%) contrast(101%)'}} /></uni-view>
-                    <uni-view data-v-0f43bbff="" class="value">{income.data?.totalTeam}<span data-v-0f43bbff="" style={{ fontSize: '14px', fontWeight: '400', marginLeft: '3px' }}>({income.data?.ActivetotalTeam}Activated)</span></uni-view>
+                    <uni-view data-v-0f43bbff="" class="imgbox"><img data-v-0f43bbff="" src="/static/img/people2.png" alt=""/></uni-view>
+                    <uni-view data-v-0f43bbff="" class="value">{incomeData.data?.totalActive}/<span data-v-0f43bbff="" >{incomeData.data?.totalDirect}</span></uni-view>
                     <uni-view data-v-0f43bbff="" class="title">Total Referrals</uni-view>
                   </uni-view>
                 </uni-view>
-                <uni-view data-v-0f43bbff="" class="rule-box">
-                  <uni-view data-v-0f43bbff="" class="title">For the Synero managed strategy trading, a 30% commission is charged. However, to incentivize promotional cooperation, we will return 21% of the commission as a rebate to the promoters. The specific rebate ratios are as follows:</uni-view>
-                  <uni-view data-v-0f43bbff="" class="layout">
-                    <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/lv1.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
-                      Members you invite</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">10%</uni-view>
-                  </uni-view>
-                  <uni-view data-v-0f43bbff="" class="layout">
-                    <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/lv2.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
-                      Members invited by Lv1</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">6%</uni-view>
-                  </uni-view>
-                  <uni-view data-v-0f43bbff="" class="layout">
-                    <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/lv3.png" alt="" style={{filter: 'brightness(0.72) invert(0)'}}/> */}
-                      Members invited by Lv2</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">5%</uni-view>
-                  </uni-view>
-                  <uni-view data-v-0f43bbff="" class="layout">
-                    <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/lv4.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
-                      Members invited by Lv3</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">3%</uni-view>
-                  </uni-view>
-                  <uni-view data-v-0f43bbff="" class="layout">
-                    <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/lv5.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
-                      Members invited by Lv4</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">1%</uni-view>
-                  </uni-view>
-                </uni-view>
+              
                 {/* <uni-view data-v-0f43bbff="" class="global-box-title">Global Partner</uni-view>
                 <uni-view data-v-0f43bbff="" class="global-box">
                   <uni-view data-v-0f43bbff="" class="global-title">Commission Rate:</uni-view>
