@@ -10,15 +10,15 @@ import { Link } from "react-router-dom";
 const Server = () => {
    const [activeTab, setActiveTab] = useState("running");
    const [servers, setQualitys] = useState([])
-    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);    
  const [slides, setSlides] = useState([
    {
       title: "VIP 1",
       heading: "VIP 1 Upgrade Conditions",
-      text: "Not Unlock This level Yet",
+      text: "Amount that can be invested $: 30-500",
       text1: "Optional investment period (hours): 12",
       text2: "To: 24",
-      price: "vi1-DkyC-7lK",
+      price: "vi1-CIyqDPCR",
       days: 7,
       purchased: false,
       effectiveAmount: "30",
@@ -26,6 +26,8 @@ const Server = () => {
       maxtradeAmount:"100",
       TeamA: "0",
       TeamBC: "0",
+      roi: "1.3% - 1.5%",
+      level: "8% / 2% / 1%",
    },
    {
       title: "VIP 2",
@@ -33,7 +35,7 @@ const Server = () => {
       text: "Amount that can be invested $: 100-300",
       text1: "Optional investment period (hours): 24",
       text2: "To: 48",
-      price: "vi2-CCAxt9OI",
+      price: "vip2-by-2",
       days: 15,
       purchased: false,
       effectiveAmount: "500",
@@ -41,11 +43,13 @@ const Server = () => {
       maxtradeAmount:"2000",
       TeamA: "3",
       TeamBC: "6",
+      roi: "1.6% - 1.8%",
+      level: "10% / 3% / 2%",
    },
    {
       title: "VIP 3",
       heading: "VIP 3 Upgrade Conditions",
-      text: "Amount that can be invested $: 100-300",
+      text: "Amount that can be invested $: 500-2000",
       text1: "Optional investment period (hours): 24",
       text2: "To: 48",
       price: "vi2-CCAxt9OI",
@@ -56,14 +60,16 @@ const Server = () => {
       maxtradeAmount:"5000",
       TeamA: "10",
       TeamBC: "24",
+      roi: "2.0% - 2.4%",
+      level: "12% / 4% / 3%",
    },
    {
       title: "VIP 4",
       heading: "VIP 4 Upgrade Conditions",
-      text: "Amount that can be invested $: 100-300",
+      text: "Amount that can be invested $: 2000-5000",
       text1: "Optional investment period (hours): 24",
       text2: "To: 48",
-      price: "vi2-CCAxt9OI",
+      price: "vi3-BxULMU4r",
       days: 15,
       purchased: false,
       effectiveAmount: "5000",
@@ -71,6 +77,8 @@ const Server = () => {
       maxtradeAmount:"15000",
     TeamA: "15",
     TeamBC: "48",
+    roi: "2.6% - 3%",
+    level: "14% / 4% / 3%",
    },
 ]);
 
@@ -97,8 +105,7 @@ const Server = () => {
 const fetchvip = async () => {
    try {
       const response = await Api.get('/fetchvip');
-      console.log(response.data);
-
+      // console.log(response.data);
       if (response.data?.success) {
          setQualitys(response.data);
          const serverData = response.data;
@@ -125,8 +132,7 @@ const fetchvip = async () => {
       console.error("Error fetching servers:", error);
    }
 };
-
-
+   
    const PLAN_IMAGES = {
       0: "S1",
       5: "S2",
@@ -145,6 +151,8 @@ const fetchvip = async () => {
       slidesToScroll: 1,
       arrows: true,
    };
+   const lastPurchasedIndex = slides.map(s => s.purchased).lastIndexOf(true);
+
    return (
       <div class="uni-body pages-server-server">
          <uni-app class="uni-app--showtabbar uni-app--maxwidth">
@@ -157,17 +165,26 @@ const fetchvip = async () => {
                      <uni-view data-v-7542ab04=""
                         class="page" style={{paddingBottom:90}}>
                         <uni-view data-v-7542ab04="" class="ellipse"></uni-view>
-                        <uni-view
-                           data-v-7542ab04="" class="page-title">Trade
-                           
-                             {/* <uni-view data-v-35b9a113="" data-v-3dcfa33c="" class="uni-col uni-col-6" style={{ paddingLeft: '0px', paddingRight: '0px' }}>
-                                                 <Link to="/notice">
-                                                   <uni-view data-v-3dcfa33c="" class="set"><img data-v-3dcfa33c="" src="/static/img/belliy.png" alt="" style={{ width: '35px',filter:'brightness(0.72) invert(0) ' }} /></uni-view>
-                           
-                                                 </Link>
-                                               </uni-view> */}
-
-                           </uni-view>
+                        <uni-view data-v-3dcfa33c="" class="top-box">
+                                          <uni-view data-v-636c600c="" data-v-3dcfa33c="" class="uni-row" style={{ marginLeft: '0px', marginRight: '0px' }}>
+                                            <uni-view data-v-35b9a113="" data-v-3dcfa33c="" class="uni-col uni-col-6" style={{ paddingLeft: '0px', paddingRight: '0px' }}>
+                                              <Link to="/dashboard"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          >
+                        
+                                                <uni-view data-v-1011963f="" class="back">
+                                                  <img data-v-1011963f="" src="/static/img/back.png" alt="" style={{ width: '0px',filter: 'brightness(1) invert(0)'}} />
+                                                  </uni-view>
+                                              </Link>                    
+                                              </uni-view>
+                                            <uni-view data-v-35b9a113="" data-v-3dcfa33c="" class="uni-col uni-col-12" style={{ paddingLeft: '0px', paddingRight: '0px' }}>
+                                              <uni-view data-v-3dcfa33c="" class="page-title">Trade</uni-view>
+                                            </uni-view>
+                                            <uni-view data-v-35b9a113="" data-v-3dcfa33c="" class="uni-col uni-col-6" style={{ paddingLeft: '0px', paddingRight: '0px' }}>
+                                              <Link to="/notice">
+                                                <uni-view data-v-3dcfa33c="" class="set"><img data-v-53c5f33f="" src="/static/img/records.png" alt="" style={{ width: '25px', marginTop: '5px', filter: 'brightness(6) invert(0)' }} /></uni-view>
+                                              </Link>
+                                            </uni-view>
+                                          </uni-view>
+                                        </uni-view>
 
                           
                         <uni-view data-v-7542ab04=""
@@ -179,8 +196,7 @@ const fetchvip = async () => {
                               data-v-7542ab04="" class="text">Buying a higher-tier server will give you a better
                               experience and greater advantages
                            </uni-view>
-                        </uni-view>
-                       
+                        </uni-view>                       
 
                            <SmartTradeQuantization/>
 
@@ -188,10 +204,9 @@ const fetchvip = async () => {
                                                    
 
 
-  <uni-view data-v-7cdca4f6="" class="top-group" style={{ width:'max-content',margin:'0px auto',padding:'8px',marginTop: '10px' }}>
+  {/* <uni-view data-v-7cdca4f6="" class="top-group" style={{ width:'max-content',margin:'0px auto',padding:'8px',marginTop: '10px' }}>
    <span data-v-d32894b1="" class="text-$primary text-14px" style={{color:'#ffcd58'}}>Transaction Record &gt;&gt;</span>
-</uni-view>
-
+</uni-view> */}
                        
                        
                         <uni-view data-v-7542ab04="" class="container" >
@@ -262,7 +277,12 @@ const fetchvip = async () => {
                                                                   // onClick={() => handleBuyClick(slide)}
                                                                   // disabled={slide.purchased}
                                                                >
-                                                                  {slide.purchased ? "Achieved" : "Not Achieved"}
+                                                                  {slide.purchased
+    ? index === lastPurchasedIndex
+      ? "Current"
+      : "Achieved"
+    : "Not Achieved"}
+
                                                                </uni-button>
                                                             </uni-view>
 
@@ -294,20 +314,19 @@ const fetchvip = async () => {
                     <uni-view data-v-0f43bbff="" class="level">
                       {/* <img data-v-0f43bbff="" src="/static/img/TeamBC.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
                       First Generation Valid Members</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">{servers.directmembers || 0}</uni-view>
+                    <uni-view data-v-0f43bbff="" class="rate">{servers.directmembers || 0}/{slides[currentSlideIndex]?.TeamA}</uni-view>
                   </uni-view>
                   <uni-view data-v-0f43bbff="" class="layout">
                     <uni-view data-v-0f43bbff="" class="level">
                       {/* <img data-v-0f43bbff="" src="/static/img/TeamC.png" alt="" style={{filter: 'brightness(0.72) invert(0)'}}/> */}
-                      Second Generation Valid Members</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">{servers?.sponsor?.teamBCount || 0}</uni-view>
+                      Second + Third Generation Valid Members</uni-view>
+                    <uni-view data-v-0f43bbff="" class="rate">{servers?.sponsor?.teamBCount || 0}/{slides[currentSlideIndex]?.TeamBC}</uni-view>
                   </uni-view>
-                  <uni-view data-v-0f43bbff="" class="layout">
+                  {/* <uni-view data-v-0f43bbff="" class="layout">
                     <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/Vm4.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
                       Third Generation Valid Members</uni-view>
                     <uni-view data-v-0f43bbff="" class="rate">{servers?.sponsor?.teamCCount || 0}</uni-view>
-                  </uni-view>
+                  </uni-view> */}
                   
                 </uni-view>   
                 <uni-view data-v-0f43bbff="" class="rule-box">
@@ -328,15 +347,20 @@ const fetchvip = async () => {
                     <uni-view data-v-0f43bbff="" class="level">
                       {/* <img data-v-0f43bbff="" src="/static/img/TeamC.png" alt="" style={{filter: 'brightness(0.72) invert(0)'}}/> */}
                       Daily Quantified times</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">5%</uni-view>
+                    <uni-view data-v-0f43bbff="" class="rate">6</uni-view>
                   </uni-view>
                   <uni-view data-v-0f43bbff="" class="layout">
                     <uni-view data-v-0f43bbff="" class="level">
                       {/* <img data-v-0f43bbff="" src="/static/img/Vm4.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
-                      return on investment</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">3%</uni-view>
+                      Return on Investment</uni-view>
+                    <uni-view data-v-0f43bbff="" class="rate">{slides[currentSlideIndex]?.roi}</uni-view>
                   </uni-view>
-                  
+                  <uni-view data-v-0f43bbff="" class="layout">
+                    <uni-view data-v-0f43bbff="" class="level">
+                      {/* <img data-v-0f43bbff="" src="/static/img/Vm4.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
+                      Level Income Up to Level</uni-view>
+                    <uni-view data-v-0f43bbff="" class="rate">{slides[currentSlideIndex]?.level}</uni-view>
+                  </uni-view>
                 </uni-view>                              
                               </uni-swiper>
                               
