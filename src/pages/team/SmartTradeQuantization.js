@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
                 // your axios instance
 import { toast } from 'react-toastify';
 import Api from '../../Requests/Api';
@@ -23,13 +23,13 @@ export default function SmartTradeQuantization({ coin = 'SOL' }) {
   const [logs, setLogs]           = useState([]);
   const [profit, setProfit]       = useState(null);
   const [showModal, setShowModal] = useState(false);
-
+  const [tradeCount, settradecount] = useState(""); 
   const handleBuyClick = async () => {
-    try {
-   
-
+    try {  
       const { data } = await Api.get('/tradeOn');
+      console.log(data);
       if (!data.success) {
+        console.log(data);
         toast.error(data.message || 'Trade failed');
         setRunning(false);
         setActiveTab('idle');
@@ -71,12 +71,32 @@ export default function SmartTradeQuantization({ coin = 'SOL' }) {
       }
     } catch (err) {
       console.error(err);
-      toast.error('Server error—please try again.');
+      const message =
+    err?.response?.data?.message || 'Server error—please try again.';
+     toast.error(message);
     } finally {
       setRunning(false);
       setActiveTab('idle');
     }
   };
+     
+   useEffect(()=>{
+          fetchtrades();
+        },[])
+   const fetchtrades = async () => {
+      try {
+         const response = await Api.get('/fetchtrade');
+         if (response.data.success) {
+          console.log(response.data);
+             settradecount(response.data.count);
+         } else {
+            console.error(response.data);
+         }
+      } catch (error) {
+         toast.error("Error making purchase:", error);
+         // console.error("Error making purchase:", error);
+      }
+   };
 
   return (
     <>
@@ -97,7 +117,7 @@ export default function SmartTradeQuantization({ coin = 'SOL' }) {
           if (!running) handleBuyClick();
         }}
       >
-          0 / 6  Start Quantify
+          {tradeCount} / 6  Start Quantify
       </uni-view>
 
 
