@@ -28490,9 +28490,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 -15px;
     margin-top: 15px;
-    background-color: hsla(0, 0%, 100%, .10196078431372549)
+    border: .5px solid rgba(82, 97, 98);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, #ffb400, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .balance-box .value[data-v-53c5f33f] {
@@ -28545,8 +28548,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 3px 4px;
-    background: rgb(22 191 179);
-
+    background: linear-gradient(to bottom, #F5C144, #D99A28);
 }
 
 .item[data-v-53c5f33f]:hover {
@@ -28591,7 +28593,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(22 191 179);
+    background: linear-gradient(to bottom, #F5C144, #D99A28);
     border-radius: 60px;
     padding: 10px;
     font-size: 17px;
@@ -28746,7 +28748,7 @@ body {
     font-family: Montserrat;
     font-size: 16px;
     line-height: 22px;
-    color:#000
+    color: #ffffff;
 }
 
 .h-line[data-v-b0a5c882] {
@@ -43398,7 +43400,7 @@ body {
     margin-top: 20px;
     padding: 30px;
     background-color: hsla(0, 0%, 100%, .10196078431372549);
-    border-radius: 20px
+    border-radius: 20px;
 }
 
 .info-box .title[data-v-0f43bbff] {
@@ -43412,7 +43414,7 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-    color: #00b7a8;
+    color: #ffca36;
     text-decoration: underline;
     font-size: 15px;
     line-height: 17px;
@@ -47927,12 +47929,10 @@ body {
 .ava-box img[data-v-1011963f] {
     height: 32px;
     width: 32px;
-    padding: 3px;
-    padding-bottom: 15px;
-
+    padding: 5px;
     background-color: hsla(0, 0%, 100%, .10196078431372549);
     border-radius: 50%;
-    margin-right: 14px
+    margin-right: 14px;
 }
 
 .name-box[data-v-1011963f] {
@@ -48040,7 +48040,7 @@ body {
     text-align: center;
     border-radius: 10px;
     padding: 3px 10px;
-    background-color: #4ac6bc;
+    background-color: #ffc600;
     color: #000;
     font-size: 16px;
     line-height: 26px;
@@ -51184,7 +51184,7 @@ body {
 .item[data-v-b0a5c882] {
     border-radius: 15px;
     margin: 5px 0;
-    background-color: #fff;
+    background: linear-gradient(135deg, #141417, #1B1B1E);
     display: flex;
     flex-direction: column;
     padding: 10px
@@ -51241,13 +51241,13 @@ body {
 .title[data-v-b0a5c882] {
     font-size: 12px;
     line-height: 14px;
-    color: #000;
+    color: #ffffff;
 }
 
 .value[data-v-b0a5c882] {
     font-size: 13px;
     line-height: 15px;
-    color: #000;
+    color: #ffffff;
     font-family: Montserrat
 }
 

@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import Api from "../../Requests/Api";
 import { QRCodeCanvas } from 'qrcode.react';
+import { QRCode } from 'react-qrcode-logo';
+
 import { FaRegCopy } from 'react-icons/fa';
 import { Toaster, toast } from 'react-hot-toast';
+import DepositInfo from './DepositInfo';
 const Deposit = () => {
 
 
@@ -108,17 +111,21 @@ const Deposit = () => {
                   </uni-view><uni-view data-v-bec7c7ce="" class="input-layer" style={{ marginTop: '20px' }}>
                     <uni-view data-v-bec7c7ce="" class="input-title">Amount</uni-view>
                     <uni-view data-v-30449abe="" data-v-bec7c7ce="" class="uni-easyinput" style={{ color: 'rgb(255, 255, 255)' }}>
-                      <uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border2 " style={{ bordBEPolor: 'rgba(255, 255, 255, 0.2)', backgroundColor: 'unset',margin:'0px auto' }}>
+                      <uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border2 " style={{ bordBEPolor: 'rgba(255, 255, 255, 0.2)', backgroundColor: 'unset', margin: '0px auto' }}>
                         <div className="scanner-image-section">
                           <div className="scanner-image-wrapper" >
                             {loading ? (
                               <img src="/static/img/loading.gif" alt="Loading..." style={{ width: '50px', height: '50px', marginLeft: 100 }} />
                             ) : (
-                              <QRCodeCanvas 
+                              <QRCode
                                 value={walletAddress}
                                 size={250}
                                 bgColor="#ffffff"
                                 fgColor="#000000"
+                                logoImage='fav.png'
+                                logoOpacity="1"
+                                removeQrCodeBehindLogo="true"
+                                qrStyle="dots"
                               />
                             )}
                           </div>
@@ -128,25 +135,19 @@ const Deposit = () => {
                       <uni-view data-v-30449abe="" class="uni-easyinput__content is-input-border " style={{ bordBEPolor: 'rgba(255, 255, 255, 0.2)', backgroundColor: 'unset', marginTop: '20px' }}>
                         <uni-input data-v-30449abe="" class="uni-easyinput__content-input" style={{ paddingLeft: '10px' }}>
                           <div class="uni-input-wrapper">
-                            <div class="uni-input-placeholder uni-easyinput__placeholder-class" data-v-30449abe="" data-v-bec7c7ce="" style={{ color: 'gray' }}>{walletAddress}</div>
-                         
+                            <div class="uni-input-placeholder uni-easyinput__placeholder-class" data-v-30449abe="" data-v-bec7c7ce="" style={{ color: '#ffffff' }}>{walletAddress}</div>
+
                           </div>
-                         
+
                         </uni-input>
                         <button onClick={copyToClipboard} className="text-xl text-[#ffffff]" style={{ width: "30px", border: "2px", background: "none", color: "#fff" }}>
-                              <FaRegCopy />
-                            </button>
+                          <FaRegCopy />
+                        </button>
                       </uni-view >
                     </uni-view>
                   </uni-view>
                 </uni-view>
-                <uni-view data-v-53c5f33f="" class="tips-box">
-                  <uni-view data-v-53c5f33f="" class="title">Minimum Recharge: $10 USDT</uni-view>
-                  {/* <uni-view data-v-53c5f33f="" class="text">A maximum of one withdrawal is allowed per day.</uni-view> */}
-                  <uni-view data-v-53c5f33f="" class="title">Only BEP20 or TRC20 networks are accepted.</uni-view>
-                  <uni-view data-v-53c5f33f="" class="text">⚠️ Do not send any other coin or network — funds sent incorrectly will be lost and cannot be recovered.</uni-view>
-                  {/* <uni-view data-v-53c5f33f="" class="text">Withdrawal of USDT: 8% handling fee will be charged.</uni-view> */}
-                </uni-view>
+                <DepositInfo/>
                 {/* <uni-view data-v-bec7c7ce="" class="submit">Submit</uni-view>   */}
               </uni-view></uni-page-body></uni-page-wrapper></uni-page>
 

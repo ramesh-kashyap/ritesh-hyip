@@ -91,7 +91,8 @@ const NodeDetails = () => {
                     </uni-view>
                     <uni-view data-v-35b9a113="" data-v-3dcfa33c="" class="uni-col uni-col-6" style={{ paddingLeft: '0px', paddingRight: '0px' }}>
                       <Link to="/notice">
-                        <uni-view data-v-3dcfa33c="" class="set"><img data-v-3dcfa33c="" src="/static/img/belliy.png" alt="" style={{ width: '35px',filter:'brightness(0.72) invert(0) ' }} /></uni-view>
+                        <uni-view data-v-3dcfa33c="" class="set"><img data-v-3dcfa33c="" src="/static/img/belliy.png" alt="" style={{ width: '35px',filter:' ' }} /></uni-view>
+
                       </Link>
                     </uni-view>
                   </uni-view>
@@ -110,16 +111,16 @@ const NodeDetails = () => {
                 </uni-view>
                 <uni-view data-v-3dcfa33c="" class="two-group">
                   <uni-view data-v-3dcfa33c="" class="item">                    
-                    <Link to="/server-commission" style={{ textDecorationLine: 'none',filter:'brightness(0.72) invert(0)' }}>
+                    <Link to="/server-commission" style={{ textDecorationLine: 'none',filter:'' }}>
                     <uni-view data-v-3dcfa33c="" class="title">Team Income</uni-view>
-                    <uni-view data-v-3dcfa33c="" translate="no" class="value"><img data-v-3dcfa33c="" src="/static/img/tincome.png" alt="" />$ {serverc}</uni-view>
+                    <uni-view data-v-3dcfa33c="" translate="no" class="value"><img data-v-3dcfa33c="" src="/static/img/dollar.png" alt="" />$ {serverc}</uni-view>
                     </Link>
 
                   </uni-view>
 
-                  <uni-view data-v-3dcfa33c="" class="item"> <Link to="/Team" style={{ textDecorationLine: 'none',filter:'brightness(0.72) invert(0)' }}>
+                  <uni-view data-v-3dcfa33c="" class="item"> <Link to="/Team" style={{ textDecorationLine: 'none',filter:'' }}>
                     <uni-view data-v-3dcfa33c="" class="title">My Team</uni-view>
-                    <uni-view data-v-3dcfa33c="" class="value"><img data-v-3dcfa33c="" src="/static/img/teams.png" alt="" />{income.data?.totalTeam}<span data-v-3dcfa33c="" style={{ fontSize: '14px', fontWeight: '400', marginLeft: '3px' }}>({income.data?.ActivetotalTeam}Activated)</span></uni-view>
+                    <uni-view data-v-3dcfa33c="" class="value"><img data-v-3dcfa33c="" src="/static/img/team-people.png" alt="" />{income.data?.ActivetotalTeam}/{income.data?.totalTeam}</uni-view>
                   </Link>
 
                   </uni-view>
@@ -133,7 +134,7 @@ const NodeDetails = () => {
                  <Link to="/Refer"style={{ textDecorationLine: 'none' }}>
                 <uni-view data-v-3dcfa33c="" class="invite-box">
 
-                  <img data-v-3dcfa33c="" src="/static/img/iinvite.png" alt="" style={{filter: 'brightness(0.72) invert(0)'}}/>
+                  <img data-v-3dcfa33c="" src="/static/img/iinvite.png" alt="" style={{filter: ''}}/>
                   <uni-view data-v-3dcfa33c="" class="invite">
                     <uni-view data-v-3dcfa33c="" class="title">Invite Friends!</uni-view>
                     <uni-view data-v-3dcfa33c="" class="text">Invite friends and earn referral commission</uni-view>
