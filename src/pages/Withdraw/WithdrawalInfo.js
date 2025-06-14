@@ -46,17 +46,15 @@ const WithdrawalGuidelines = () => {
          <div style={itemStyle}>
          4.Standard Withdrawal Processing Time: Within 72 hours.
       </div>
-      <div style={itemStyle}>
-         5.Withdrawal Fee: 8% of the amount + $2 fixed charge.
-      </div>
+
        <div style={itemStyle}>
-         6.Withdrawal Fee: 8% of the amount + $2 fixed charge.
+         4.Withdrawal Fee: 8% of the amount + $2 fixed charge.
       </div>
       <div style={itemStyle}>
-         7.Wallet Address Change: Withdrawals will be disabled for 36 hours after any wallet address update
+         6.Wallet Address Change: Withdrawals will be disabled for 36 hours after any wallet address update
       </div>
       <div style={itemStyle}>
-         8.Password Change: Withdrawals will be disabled for 24 hours after a password change
+         7.Password Change: Withdrawals will be disabled for 24 hours after a password change
       </div>
     </div>
   );
