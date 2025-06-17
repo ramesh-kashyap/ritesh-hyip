@@ -31,7 +31,7 @@ const Login = () => {
       if (response.data?.token) {
         const { token, message } = response.data;
         localStorage.setItem("authToken", token);
-        toast.success(message || "Login successful");
+        // toast.success(message || "Login successful");
         navigate("/dashboard");
       } else {
         toast.error(response.data?.message || "Invalid credentials");
@@ -59,6 +59,49 @@ const Login = () => {
     setInput(e.target.value);
   };
 
+    const containerStyle = {
+    // background: 'linear-gradient(135deg, rgb(78, 78, 81), rgb(27, 27, 30))',
+    padding: '20px',
+    display: 'flex',
+    alignItems: 'center',
+    color: '#fff',
+    fontFamily: 'Arial, sans-serif',
+    borderRadius: '12px',
+    maxWidth: '600px',
+  };
+
+  const logoWrapperStyle = {
+    width: '60px',
+    height: '60px',
+    borderRadius: '16px',
+    backgroundColor: '#000',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: '16px',
+  };
+
+  const logoStyle = {
+    width: '36px',
+    height: '36px',
+  };
+
+  const textWrapperStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+  };
+
+  const helloStyle = {
+    fontSize: '24px',
+    fontWeight: 'bold',
+    marginBottom: '4px',
+  };
+
+  const welcomeStyle = {
+    fontSize: '16px',
+  };
+
+
 
   return (
     <div class="uni-body pages-login-login">
@@ -69,14 +112,22 @@ const Login = () => {
               <uni-view data-v-2b56ecaf="" class="page"style={{height:'500px'}} >
                 <uni-view data-v-2b56ecaf="" class="ellipse"></uni-view>
                 <uni-view data-v-2b56ecaf="" class="service">
-                  <uni-text data-v-45a6b600="" data-v-2b56ecaf="" class="fas fa-headphones" style={{ color: '#fff', fontSize: '20px' }}>
+                 </uni-view>
+                 
+                <div style={containerStyle}>
+                <div style={logoWrapperStyle}>
+                  <img
+                    src="fav.png" // Replace with your actual path
+                    alt="Logo"
+                    style={logoStyle}
+                  />
+                </div>
+                <div style={textWrapperStyle}>
+                  <div style={helloStyle}>Hello,</div>
+                  <div style={welcomeStyle}>Welcome zyloq.app</div>
+                </div>
+              </div>
 
-                  </uni-text></uni-view>
-                  <Link to="/langauge">
-                <uni-view data-v-2b56ecaf="" class="language"><img data-v-2b56ecaf="" src="/static/img/icon-lang.png" alt=""  style={{filter: 'brightness(6) invert(0)'}} />
-                </uni-view>
-                </Link>
-                <uni-view data-v-2b56ecaf="" class="welcome">Welcome Back!</uni-view><uni-view data-v-2b56ecaf="" class="welcome-tips">Enter your Email and password to continue to your account</uni-view>
                 <uni-view data-v-2b56ecaf="" class="input-box">
 
 

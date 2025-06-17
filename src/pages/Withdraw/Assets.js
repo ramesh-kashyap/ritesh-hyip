@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Import Link for navigation
 import Api from '../../Requests/Api';
+import MyIncomeCard from './MyIncomeCard';
 
 const Assets = () => {
     const [transactions, setTransactions] = useState([]);
@@ -91,29 +92,19 @@ const Assets = () => {
                                             <Link to="/deposit" style={{ color: '#000', textDecoration: 'none', fontWeight: '500', fontSize: '16px' }}>
                                                 Deposit
                                             </Link><img data-v-06ae08d2="" src="/static/img/usdtdown.png"
-                                                alt="" style={{filter: 'brightness(0.90) invert(6)' }}/>
+                                                alt="" />
                                         </uni-view>
                                       
                                         <uni-view
                                             data-v-06ae08d2="" class="balance-btn">  <Link to="/withdraw-req" style={{ color: '#000', textDecoration: 'none', fontWeight: '500', fontSize: '16px' }}>
                                                 Withdraw
                                             </Link><img data-v-06ae08d2=""
-                                                src="/static/img/usdtup.png" alt="" style={{filter: 'brightness(0.90) invert(6)' }}/></uni-view>
+                                                src="/static/img/usdtup.png" alt="" /></uni-view>
                                     </uni-view>
                                 </uni-view>
                                 {/* <uni-view data-v-248ca5b8="" class="user-title">Earnings in the past 7 days</uni-view> */}
-                                {/* <uni-view
-                                    data-v-248ca5b8="" class="income-box">
-                                    <uni-view data-v-c3c2634e="" data-v-248ca5b8=""
-                                        style={{ width: '400px', height: '200px', WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)' }}
-                                        echarts_instance="ec_1744619586455">
-                                        <div
-                                            style={{ position: 'relative', width: '384px', height: '200px', padding: '0px', margin: '0px', borderWidth: '0px', cursor: 'default' }}>
-                                            <canvas data-zr-dom-id="zr_0" width="384" height="200"
-                                                style={{ position: 'absolute', left: '0px', top: '0px', width: '384px', height: '200px', userSelect: 'none', WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)', padding: '0px', margin: '0px', borderWidth: '0px' }}></canvas>
-                                        </div>
-                                    </uni-view>
-                                </uni-view> */}
+                                <br></br>
+                                <MyIncomeCard/>
                                 <uni-view data-v-248ca5b8="" class="user-title"
                                     style={{ marginTop: '30px' }}>Funding Details <uni-view data-v-248ca5b8=""
                                         class="right"
@@ -126,7 +117,7 @@ const Assets = () => {
                                                 <uni-view data-v-248ca5b8=""  class="item" key={index} >
                                                     <uni-view data-v-248ca5b8=""  class="first">
                                                         <uni-view data-v-248ca5b8=""  class="left">
-                                                            {item.created_at.toLocaleString()}
+                                                            {new Date(item.created_at).toLocaleString()}
                                                         </uni-view>
                                                         <uni-view data-v-248ca5b8=""
                                                              class="right"style={{ color: getAmountColor(item.type),fontWeight:"900" }}>

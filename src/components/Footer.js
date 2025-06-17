@@ -26,7 +26,7 @@ export default function Footer() {
                   <div class="uni-tabbar__icon" style={{ width: '24px', height: '24px' }}>
                     
                   <img
-                      src="/static/tabbar/home.png"
+                   src={`/static/tabbar/${currentPath === '/dashboard' ? 'home_active' : 'home'}.png`}
                       style={{
                         filter: currentPath === '/dashboard' ? activeFilter : 'brightness(1) invert(0)',
                       }}
@@ -53,7 +53,7 @@ export default function Footer() {
                   <div class="uni-tabbar__icon" style={{ width: '24px', height: '24px' }}>
                     
                   <img
-                      src="/static/tabbar/trade.png"
+                     src={`/static/tabbar/${currentPath === '/quality' ? 'trade_active' : 'trade'}.png`}
                       style={{
                         filter: currentPath === '/quality' ? activeFilter : 'brightness(1) invert(0)',
                       }}
@@ -82,7 +82,7 @@ export default function Footer() {
                     
                     
                   <img
-                      src="/static/tabbar/assets.png"
+                         src={`/static/tabbar/${currentPath === '/assets' ? 'assets_active' : 'assets'}.png`}
                       style={{
                         filter: currentPath === '/assets' ? activeFilter : 'brightness(1) invert(0)',
                       }}
@@ -109,7 +109,8 @@ export default function Footer() {
                 <div class="uni-tabbar__bd" style={{ height: '65px' }}>
                   <div class="uni-tabbar__icon" style={{ width: '24px', height: '24px' }}>
                   <img
-                      src="/static/tabbar/user.png"
+                     
+                          src={`/static/tabbar/${currentPath === '/profile' ? 'user_active' : 'user'}.png`}
                       style={{
                         filter: currentPath === '/profile' ? activeFilter : '',
                       }}

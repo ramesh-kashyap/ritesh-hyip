@@ -28,7 +28,6 @@ const Register = () => {
   const [formData, setFormData] = useState({
     sponsor: "",
     email: "",
-    phone: "",
     password: "",
     password_confirmation: "",
     countryCode: "",
@@ -115,7 +114,6 @@ const Register = () => {
         sponsor: formData.sponsor,
         name: formData.name,
         email: formData.email,
-        phone: formData.phone,
         password: formData.password,
         countryCode: formData.countryCode,
         verificationCode: formData.verificationCode,
@@ -130,6 +128,50 @@ const Register = () => {
   };
 
 
+  
+    const containerStyle = {
+    // background: 'linear-gradient(135deg, rgb(78, 78, 81), rgb(27, 27, 30))',
+    padding: '20px',
+    display: 'flex',
+    alignItems: 'center',
+    color: '#fff',
+    fontFamily: 'Arial, sans-serif',
+    borderRadius: '12px',
+    maxWidth: '600px',
+  };
+
+  const logoWrapperStyle = {
+    width: '60px',
+    height: '60px',
+    borderRadius: '16px',
+    backgroundColor: '#000',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: '16px',
+  };
+
+  const logoStyle = {
+    width: '36px',
+    height: '36px',
+  };
+
+  const textWrapperStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+  };
+
+  const helloStyle = {
+    fontSize: '24px',
+    fontWeight: 'bold',
+    marginBottom: '4px',
+  };
+
+  const welcomeStyle = {
+    fontSize: '16px',
+  };
+
+
   return (
     <div class="uni-body pages-login-login">
       <uni-app class="uni-app--maxwidth">
@@ -138,29 +180,22 @@ const Register = () => {
             <uni-page-body>
               <uni-view data-v-2b56ecaf="" class="page">
                 <uni-view data-v-2b56ecaf="" class="ellipse"></uni-view>
-                <uni-view data-v-2b56ecaf="" class="service">
-                  <uni-text class="fas fa-headphones"
-                    data-v-45a6b600=""
-                    data-v-2b56ecaf=""
-
-                    style={{ color: "rgb(243, 243, 243)", fontSize: "20px" }}
-                  ></uni-text>
-                </uni-view>
-               <Link to="/langauge">
-                <uni-view data-v-2b56ecaf="" class="language">
-                  <img style={{filter: 'brightness(6) invert(0)'}}
-                    data-v-2b56ecaf=""
-                    src="/static/img/icon-lang.png"
-                    alt=""
+                
+                
+                <div style={containerStyle}>
+                <div style={logoWrapperStyle}>
+                  <img
+                    src="fav.png" // Replace with your actual path
+                    alt="Logo"
+                    style={logoStyle}
                   />
-                </uni-view>
-                </Link>
-                <uni-view data-v-2b56ecaf="" class="welcome">
-                  Welcome Back!
-                </uni-view>
-                <uni-view data-v-2b56ecaf="" class="welcome-tips">
-                  Good to see you here! Add your account details to continue{" "}
-                </uni-view>
+                </div>
+                <div style={textWrapperStyle}>
+                  <div style={helloStyle}>Hello,</div>
+                  <div style={welcomeStyle}>Welcome zyloq.app</div>
+                </div>
+              </div>
+
                 <uni-view data-v-2b56ecaf="" class="input-box">
                   <uni-view data-v-2b56ecaf="" class="input-layer">
                     <uni-view data-v-2b56ecaf="" class="input-title">
@@ -219,74 +254,6 @@ const Register = () => {
                   </uni-view>
               
 
-                  <uni-view data-v-2b56ecaf="" class="input-layer">
-                    <uni-view data-v-2b56ecaf="" class="input-title">
-                      Mobile
-                    </uni-view>
-                    <uni-view
-                      data-v-30449abe=""
-                      data-v-2b56ecaf=""
-                      class="uni-easyinput"
-                    >
-                      <uni-view
-                        data-v-30449abe=""
-                        class="uni-easyinput__content is-input-border "
-                        
-                      >
-                        <uni-view data-v-30449abe="" class="content-clear-icon">
-                          <div class="relative flex items-center bg-[rgb(78_78_78_/_40%)]  rounded-l-xl px-2 h-[53px] text-white text-base min-w-[85px]">
-                            <PhoneInput
-                              defaultCountry="IN"
-                              value={formData.countryCode}
-                              onChange={(value, meta) => {
-                                setFormData({
-                                  ...formData,
-                                  countryCode: meta.country.dialCode,
-                                  country: meta.country.iso2.toUpperCase(),
-                                });
-                              }}
-                              inputClassName="!opacity-0 !w-0"
-                              containerClassName="!absolute !left-0 !top-0 w-full h-full"
-                              buttonClassName="!h-full !bg-transparent !border-none z-10 !pl-1 !pr-1"
-                            />
-                            {/* <span className="ml-[-15px] z-0">+{formData.countryCode}</span> */}
-                          </div>
-                        </uni-view>{" "}
-                        <uni-input
-                          data-v-30449abe=""
-                          class="uni-easyinput__content-input"
-                          style={{ paddingLeft: "10px" }}
-                        >
-                          <div class="uni-input-wrapper">
-                            <input
-                              maxLength="140"
-
-                              type="text"
-                              name="phone"
-                              value={formData.phone}
-                              onChange={handleChange}
-
-                              class="uni-input-input"
-                              required
-
-                              placeholder="Enter your Phone Number"
-                            />
-                          </div>
-                        </uni-input>
-                        <uni-text
-                          data-v-45a6b600=""
-                          data-v-30449abe=""
-                          class="uni-icons content-clear-icon "
-                          style={{
-                            color: "rgb(192, 196, 204)",
-                            fontSize: "24px",
-                          }}
-                        >
-                          <span></span>
-                        </uni-text>
-                      </uni-view>
-                    </uni-view>
-                  </uni-view>
 
                   <uni-view data-v-2b56ecaf="" class="input-layer">
                     <uni-view data-v-2b56ecaf="" class="input-title">

@@ -9,6 +9,8 @@ import { SlArrowRight } from "react-icons/sl";
 import TradingChart from "./TradingChart";
 import { jwtDecode } from 'jwt-decode';
 import { useTranslation } from 'react-i18next';
+import FeatureGrid from "./FeatureGrid";
+import WelcomeMarquee from "./WelcomeMarquee";
 
 const symbols = ["dogeusdt", "ethusdt", "dotusdt", "nearusdt"];
 
@@ -185,12 +187,14 @@ const Dashboard = () => {
                         
                         <uni-view
                            data-v-06ae08d2="" class="right">
-                           {/* <uni-view data-v-06ae08d2="" class="notice"><img
-                              data-v-06ae08d2="" src="/static/img/rewards.png" alt=""
-                              style={{ width: '28px' }} /></uni-view> */}
+                              <Link target="_blank" to="https://t.me/AidenSabestin ">
+                           <uni-view data-v-06ae08d2="" class="notice"><img
+                              data-v-06ae08d2="" src="/static/img/icons-support.png" alt=""
+                              style={{ width: '28px', height: '28px', }} /></uni-view> 
+                              </Link>
                            <Link to="/notice">
                               <uni-view data-v-06ae08d2="" class="notice"><img
-                                 data-v-06ae08d2="" src="/static/img/belliy.png" alt="" style={{ width: '40px', height: '40px', }} /><uni-view
+                                 data-v-06ae08d2="" src="/static/img/belliy.png" alt="" style={{ width: '28px', height: '28px', }} /><uni-view
                                     data-v-06ae08d2=""
                                     class=""></uni-view></uni-view>
                            </Link>
@@ -216,16 +220,19 @@ const Dashboard = () => {
                               <Link to="/deposit" style={{ color: '#000', textDecoration: 'none', fontWeight: '500', fontSize: '16px' }}>
                                  {t('Deposit')}
                               </Link><img data-v-06ae08d2="" src="/static/img/usdtdown.png"
-                                 alt="" style={{ filter: 'brightness(0.90) invert(6)' }} /></uni-view>
+                                 alt=""  /></uni-view>
                        
 
                            <uni-view
                               data-v-06ae08d2="" class="balance-btn"> <Link to="/withdraw-req" style={{ color: '#000', textDecoration: 'none', fontWeight: '500', fontSize: '16px' }}>{t('Withdraw')} </Link><img data-v-06ae08d2=""
-                                 src="/static/img/usdtup.png" alt="" style={{ filter: 'brightness(0.90) invert(6)' }} /></uni-view>
+                                 src="/static/img/usdtup.png" alt=""  /></uni-view>
 
                         </uni-view></uni-view>
-                     <uni-view
-                        data-v-06ae08d2="" class="index-title">{t('attention')}</uni-view>
+
+                        <br></br>
+
+                        <WelcomeMarquee/>
+
                      {/* <uni-view data-v-06ae08d2=""
                         class="attention-box">
 
@@ -253,32 +260,8 @@ const Dashboard = () => {
                               );
                            })}
                   </uni-view> */}
-                     <uni-view
-                        data-v-06ae08d2="" class="new-banner">
-                        <uni-swiper data-v-06ae08d2="" style={{ height: '270px', marginBottom:-160}}>
-                           <div class="uni-swiper-wrapper">
-                              <div class="uni-swiper-slides">
-                                 <div class="uni-swiper-slide-frame" style={{ width: '100%', height: '100%', transform: 'translate(0%, 0px) translateZ(0px)' }}>
-                                    <uni-swiper-item data-v-06ae08d2="" style={{ position: 'absolute',display:'flex', width: '100%', height: '100%', transform: 'translate(0%, 0px) translateZ(0px)' }}>
-                                       <uni-view data-v-06ae08d2="" class="banner-item" onClick={navTeam}>
-                                             <img data-v-06ae08d2="" src="/static/tabbar/invite.png" alt="" />
-                                             <uni-view data-v-06ae08d2="" class="banner-title">{t('ExclusiveUsers')}</uni-view>
-                                             <uni-view data-v-06ae08d2="" class="banner-text">{t('Exclusiverewards')}</uni-view>
-                                             {/* <uni-view data-v-06ae08d2="" class="banner-btn" onClick={navTeam}>Invite Friends</uni-view> */}
-                                       </uni-view>
-                                       <uni-view data-v-06ae08d2="" class="banner-item" onClick={navQuality}>
-                                             <img data-v-06ae08d2="" src="/static/tabbar/trade.png" alt=""/>
-                                             <uni-view data-v-06ae08d2="" class="banner-title">{t('ctask')}</uni-view>
-                                             <uni-view data-v-06ae08d2="" class="banner-text">{t('Completetask')}</uni-view>
-                                             {/* <uni-view data-v-06ae08d2="" class="banner-btn" onClick={navTeam}>Trade Now</uni-view> */}
-                                       </uni-view>
-                                    </uni-swiper-item>
-                                 </div>
-                              </div>
-
-                           </div>
-                        </uni-swiper></uni-view>
-
+                    
+                  <FeatureGrid/>
                      <uni-view data-v-06ae08d2="" class="market-box"><uni-view
                         data-v-06ae08d2="" class="market-title">{t('MarketQuotes')}</uni-view>
 
@@ -296,7 +279,7 @@ const Dashboard = () => {
                                        display: "flex",
                                        alignItems: "center",
                                        justifyContent: "space-between",
-                                       background: "#16151a",
+                                       background: "linear-gradient(135deg, rgb(78, 78, 81), rgb(27, 27, 30))",
                                        padding: "12px",
                                        borderRadius: "10px",
                                        marginBottom: "10px"
