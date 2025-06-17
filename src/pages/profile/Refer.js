@@ -86,7 +86,7 @@ const Refer = () => {
                 <uni-view data-v-0f43bbff="" class="top-box">
                   <uni-view data-v-636c600c="" data-v-0f43bbff="" class="uni-row" style={{ marginLeft: '0px', marginRight: '0px' }}>
                     <uni-view data-v-35b9a113="" data-v-0f43bbff="" class="uni-col uni-col-6" style={{ paddingLeft: '0px', paddingRight: '0px' }}>
-                      <Link to="/profile">
+                      <Link to="/dashboard">
                         <uni-view data-v-0f43bbff="" class="back"><img data-v-0f43bbff="" src="/static/img/back.png" alt="" style={{ width: '35px',filter:'brightness(1) invert(0)' }} /></uni-view>
                       </Link>
                     </uni-view>
@@ -96,7 +96,7 @@ const Refer = () => {
                     <uni-view data-v-35b9a113="" data-v-0f43bbff="" class="uni-col uni-col-6" style={{ paddingLeft: '0px', paddingRight: '0px' }}></uni-view>
                   </uni-view>
                 </uni-view>
-                <uni-view data-v-0f43bbff="" class="info-box" style={{background: "linear-gradient(135deg, #141417, #1B1B1E)", border:'.5px solid rgba(82, 97, 98)',}}>
+                <uni-view data-v-0f43bbff="" class="info-box" style={{background: "linear-gradient(135deg, rgb(78, 78, 81), rgb(27, 27, 30))", border:'.5px solid rgba(82, 97, 98)',}}>
                   <uni-view data-v-0f43bbff="" class="qrcode-box">
                     <uni-view data-v-cd74eaf4="" data-v-0f43bbff="" class="tki-qrcode"> 
                       <uni-view data-v-0f43bbff="" class=""><img data-v-0f43bbff="" src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${window.location.origin}/register?sponsor=${username}`} alt="" /></uni-view> 
@@ -136,6 +136,7 @@ const Refer = () => {
                   </uni-view>
                 </uni-view>
               
+<<<<<<< HEAD
                 <uni-view data-v-0f43bbff="" class="rule-box">
                   {/* <uni-view data-v-0f43bbff="" class="title">For the Synero managed strategy trading, a 30% commission is charged. However, to incentivize promotional cooperation, we will return 21% of the commission as a rebate to the promoters. The specific rebate ratios are as follows:</uni-view> */}
                   <uni-view data-v-0f43bbff="" class="layout">
@@ -170,6 +171,9 @@ const Refer = () => {
                   </uni-view> */}
                 </uni-view>
  
+=======
+               
+>>>>>>> 8b8a64d2dea3722809fd2490fde7ff11c76105d9
               </uni-view>
             </uni-page-body>
           </uni-page-wrapper>

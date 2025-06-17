@@ -39,7 +39,7 @@ export default function SmartTradeQuantization({ coin = 'SOL' }) {
       setRunning(true);
       setLogs([]);
       setActiveTab('running');
-      toast.success('Trade started!');
+      // toast.success('Trade started!');
 
       // choose random exchanges
       const buyEx  = randomFrom(EXCHANGES);
@@ -66,6 +66,7 @@ export default function SmartTradeQuantization({ coin = 'SOL' }) {
       if (closeData.status) {
         setProfit(closeData.profit ?? '0.0000');
         setShowModal(true);
+        fetchtrades();
       } else {
         toast.error(closeData.message || 'Closing trade failed');
       }
@@ -107,11 +108,11 @@ export default function SmartTradeQuantization({ coin = 'SOL' }) {
         style={{width:"100%",cursor:"pointor",
             background:
             activeTab === "running"
-                ? "linear-gradient(to bottom, #ffb400, #ffe793)"
-                : "linear-gradient(to bottom, #ffb400, #ffe793)",
+                ? "linear-gradient(#FFD429, rgb(217, 154, 40))"
+                : "linear-gradient(#FFD429, rgb(217, 154, 40))",
             color:
             activeTab === "running" ? "#000" : "rgb(0, 0, 0)",
-            transition: "all 0.3s ease",fontWeight:'700'
+            transition: "all 0.3s ease",fontWeight:'700',cursor:'pointer'
         }}
         onClick={() => {
           if (!running) handleBuyClick();

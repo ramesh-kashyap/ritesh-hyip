@@ -176,13 +176,28 @@ const WithdrawReq = () => {
           <uni-view data-v-53c5f33f="" class="select-box">
 
 
-            <uni-view data-v-53c5f33f="" class="item" onClick={() => { setSelectedWallet(wallets.trc20); setWalletType("TRC20"); }}style={{
-  backgroundColor: wallets.trc20 ? '' : 'rgb(255, 255, 255)',
-}}>
+            <uni-view data-v-53c5f33f="" class="item" onClick={() => { setSelectedWallet(wallets.trc20); setWalletType("TRC20"); }}   style={{
+                          backgroundColor: wallets.trc20? '#000000' : '#fff' ,
+                          padding: '8px 12px',
+                          borderRadius: '6px',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          color:  wallets.trc20? '#fff' : '#000',
+                          border:'1px solid #ffde31'
+                        }}>
               <img data-v-53c5f33f="" src="/static/img/USDT.png" alt="" />TRC20</uni-view>
-            <uni-view data-v-53c5f33f="" class="item" onClick={() => { setSelectedWallet(wallets.bep20); setWalletType("BEP20"); }}style={{
-  backgroundColor: wallets.bep20 ? '' : 'rgb(255, 255, 255)',
-}}>
+            <uni-view data-v-53c5f33f="" class="item" onClick={() => { setSelectedWallet(wallets.bep20); setWalletType("BEP20"); }}
+              style={{
+                          backgroundColor: wallets.bep20? '#000000 !important' : '#fff !important',
+                          padding: '8px 12px',
+                          borderRadius: '6px',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          color:  wallets.bep20? '#fff' : '#000',
+                          border:'1px solid #ffde31'
+                        }}>
               <img data-v-53c5f33f="" src="/static/img/USDT.png" alt="" />BEP20</uni-view>
           </uni-view>
 

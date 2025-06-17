@@ -78,13 +78,14 @@ const Deposit = () => {
                         class="item"
                         onClick={() => setSelected('trc20')}
                         style={{
-                          backgroundColor: selected === 'trc20' ? '#ffc600' : '#fff',
+                          backgroundColor: selected === 'trc20' ? '#000000' : '#fff',
                           padding: '8px 12px',
                           borderRadius: '6px',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
                           color: selected === 'trc20' ? '#fff' : '#000',
+                          border:'1px solid #ffde31'
                         }}
                       >
                         <img src="/static/img/USDT.png" alt="" style={{ width: '20px', marginRight: '6px' }} />
@@ -95,13 +96,14 @@ const Deposit = () => {
                         class="item"
                         onClick={() => setSelected('bep20')}
                         style={{
-                          backgroundColor: selected === 'bep20' ? '#ffc600' : '#fff',
+                           backgroundColor: selected === 'bep20' ? '#000000' : '#fff',
                           padding: '8px 12px',
                           borderRadius: '6px',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
                           color: selected === 'bep20' ? '#fff' : '#000',
+                             border:'1px solid #ffde31'
                         }}
                       >
                         <img src="/static/img/USDT.png" alt="" style={{ width: '20px', marginRight: '6px' }} />
