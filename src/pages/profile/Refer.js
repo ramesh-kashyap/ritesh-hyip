@@ -136,44 +136,7 @@ const Refer = () => {
                   </uni-view>
                 </uni-view>
               
-<<<<<<< HEAD
-                <uni-view data-v-0f43bbff="" class="rule-box">
-                  {/* <uni-view data-v-0f43bbff="" class="title">For the Synero managed strategy trading, a 30% commission is charged. However, to incentivize promotional cooperation, we will return 21% of the commission as a rebate to the promoters. The specific rebate ratios are as follows:</uni-view> */}
-                  <uni-view data-v-0f43bbff="" class="layout">
-                    <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/lv1.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
-                      Invite one for</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">$100 - get $6</uni-view>
-                  </uni-view>
-                  <uni-view data-v-0f43bbff="" class="layout">
-                    <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/lv2.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} /> */}
-                      Invite three for</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">$100 - get 18</uni-view>
-                  </uni-view>
-                  <uni-view data-v-0f43bbff="" class="layout">
-                    <uni-view data-v-0f43bbff="" class="level">
-                      {/* <img data-v-0f43bbff="" src="/static/img/lv3.png" alt="" style={{filter: 'brightness(0.72) invert(0)'}}/> */}
-                      Invite -</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate"> 10 for $100 - get - $60</uni-view>
-                  </uni-view>
-                  {/* <uni-view data-v-0f43bbff="" class="layout">
-                    <uni-view data-v-0f43bbff="" class="level">
-                      <img data-v-0f43bbff="" src="/static/img/lv4.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} />
-                      Members invited by Lv3</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">3%</uni-view>
-                  </uni-view>
-                  <uni-view data-v-0f43bbff="" class="layout">
-                    <uni-view data-v-0f43bbff="" class="level">
-                      <img data-v-0f43bbff="" src="/static/img/lv5.png" alt=""style={{filter: 'brightness(0.72) invert(0)'}} />
-                      Members invited by Lv4</uni-view>
-                    <uni-view data-v-0f43bbff="" class="rate">1%</uni-view>
-                  </uni-view> */}
-                </uni-view>
- 
-=======
                
->>>>>>> 8b8a64d2dea3722809fd2490fde7ff11c76105d9
               </uni-view>
             </uni-page-body>
           </uni-page-wrapper>
