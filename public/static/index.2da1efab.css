@@ -4568,7 +4568,7 @@ body::after {
     font-size: 14px
 }
 
-/*每个页面公共css */
+/*æ¯ä¸ªé¡µé¢å…¬å…±css */
 
 .uni-border {
     border: 1px #f0f0f0 solid
@@ -7699,30 +7699,30 @@ body {
 
 ::-webkit-scrollbar {
     width: 5px;
-    /* 控制滚动条的宽度 */
+    /* æŽ§åˆ¶æ»šåŠ¨æ¡çš„å®½åº¦ */
     height: 5px
 }
 
-/* 滚动条轨道样式 */
+/* æ»šåŠ¨æ¡è½¨é“æ ·å¼ */
 ::-webkit-scrollbar-track {
     background: transparent;
-    /* 轨道的背景颜色 */
+    /* è½¨é“çš„èƒŒæ™¯é¢œè‰² */
     border-radius: 10px
-        /* 轨道的圆角 */
+        /* è½¨é“çš„åœ†è§’ */
 }
 
-/* 滚动条滑块样式 */
+/* æ»šåŠ¨æ¡æ»‘å—æ ·å¼ */
 ::-webkit-scrollbar-thumb {
     background: hsla(0, 0%, 83.1%, .25098039215686274);
-    /* 滑块的背景颜色 */
+    /* æ»‘å—çš„èƒŒæ™¯é¢œè‰² */
     border-radius: 10px
-        /* 滑块的圆角 */
+        /* æ»‘å—çš„åœ†è§’ */
 }
 
-/* 当鼠标悬停在滑块上时的样式 */
+/* å½“é¼ æ ‡æ‚¬åœåœ¨æ»‘å—ä¸Šæ—¶çš„æ ·å¼ */
 ::-webkit-scrollbar-thumb:hover {
     background: hsla(0, 0%, 83.1%, .25098039215686274)
-        /* 悬停时滑块的背景颜色 */
+        /* æ‚¬åœæ—¶æ»‘å—çš„èƒŒæ™¯é¢œè‰² */
 }
 
 
@@ -9384,7 +9384,7 @@ body {
     line-height: 24px;
     font-family: Raleway;
     color: #fff;
-    background: #0f0e11 url(../../static/img/bg-default.599ce7c6.png) no-repeat;
+    background: #0f0e11;
 }
 
 .top-box[data-v-06ae08d2] {
@@ -15395,30 +15395,30 @@ body {
 
 ::-webkit-scrollbar {
     width: 5px;
-    /* 控制滚动条的宽度 */
+    /* æŽ§åˆ¶æ»šåŠ¨æ¡çš„å®½åº¦ */
     height: 5px
 }
 
-/* 滚动条轨道样式 */
+/* æ»šåŠ¨æ¡è½¨é“æ ·å¼ */
 ::-webkit-scrollbar-track {
     background: transparent;
-    /* 轨道的背景颜色 */
+    /* è½¨é“çš„èƒŒæ™¯é¢œè‰² */
     border-radius: 10px
-        /* 轨道的圆角 */
+        /* è½¨é“çš„åœ†è§’ */
 }
 
-/* 滚动条滑块样式 */
+/* æ»šåŠ¨æ¡æ»‘å—æ ·å¼ */
 ::-webkit-scrollbar-thumb {
     background: hsla(0, 0%, 83.1%, .25098039215686274);
-    /* 滑块的背景颜色 */
+    /* æ»‘å—çš„èƒŒæ™¯é¢œè‰² */
     border-radius: 10px
-        /* 滑块的圆角 */
+        /* æ»‘å—çš„åœ†è§’ */
 }
 
-/* 当鼠标悬停在滑块上时的样式 */
+/* å½“é¼ æ ‡æ‚¬åœåœ¨æ»‘å—ä¸Šæ—¶çš„æ ·å¼ */
 ::-webkit-scrollbar-thumb:hover {
     background: hsla(0, 0%, 83.1%, .25098039215686274)
-        /* 悬停时滑块的背景颜色 */
+        /* æ‚¬åœæ—¶æ»‘å—çš„èƒŒæ™¯é¢œè‰² */
 }
 
 
@@ -20551,7 +20551,7 @@ body {
     font-size: 14px
 }
 
-/*每个页面公共css */
+/*æ¯ä¸ªé¡µé¢å…¬å…±css */
 
 .uni-border {
     border: 1px #f0f0f0 solid
@@ -23647,30 +23647,30 @@ body {
 
 ::-webkit-scrollbar {
     width: 5px;
-    /* 控制滚动条的宽度 */
+    /* æŽ§åˆ¶æ»šåŠ¨æ¡çš„å®½åº¦ */
     height: 5px
 }
 
-/* 滚动条轨道样式 */
+/* æ»šåŠ¨æ¡è½¨é“æ ·å¼ */
 ::-webkit-scrollbar-track {
     background: transparent;
-    /* 轨道的背景颜色 */
+    /* è½¨é“çš„èƒŒæ™¯é¢œè‰² */
     border-radius: 10px
-        /* 轨道的圆角 */
+        /* è½¨é“çš„åœ†è§’ */
 }
 
-/* 滚动条滑块样式 */
+/* æ»šåŠ¨æ¡æ»‘å—æ ·å¼ */
 ::-webkit-scrollbar-thumb {
     background: hsla(0, 0%, 83.1%, .25098039215686274);
-    /* 滑块的背景颜色 */
+    /* æ»‘å—çš„èƒŒæ™¯é¢œè‰² */
     border-radius: 10px
-        /* 滑块的圆角 */
+        /* æ»‘å—çš„åœ†è§’ */
 }
 
-/* 当鼠标悬停在滑块上时的样式 */
+/* å½“é¼ æ ‡æ‚¬åœåœ¨æ»‘å—ä¸Šæ—¶çš„æ ·å¼ */
 ::-webkit-scrollbar-thumb:hover {
     background: hsla(0, 0%, 83.1%, .25098039215686274)
-        /* 悬停时滑块的背景颜色 */
+        /* æ‚¬åœæ—¶æ»‘å—çš„èƒŒæ™¯é¢œè‰² */
 }
 
 
@@ -29033,7 +29033,7 @@ body {
     cursor: default
 }
 
-/* picker 弹出层通用的指示小三角 */
+/* picker å¼¹å‡ºå±‚é€šç”¨çš„æŒ‡ç¤ºå°ä¸‰è§’ */
 .uni-popper__arrow_bottom[data-v-7442d4f6],
 .uni-popper__arrow_bottom[data-v-7442d4f6]::after,
 .uni-popper__arrow_top[data-v-7442d4f6],
@@ -30292,7 +30292,7 @@ body {
 }
 
 .member-item[data-v-1011963f] {
-    background-color: #16151a;
+    background: linear-gradient(135deg, rgb(78, 78, 81), rgb(27, 27, 30));
     display: flex;
     flex-direction: column;
     border-radius: 16px;
@@ -34182,23 +34182,23 @@ body {
 
 ::-webkit-scrollbar {
     width: 5px;
-    /* 控制滚动条的宽度 */
+    /* æŽ§åˆ¶æ»šåŠ¨æ¡çš„å®½åº¦ */
     height: 5px
 }
 
-/* 滚动条轨道样式 */
+/* æ»šåŠ¨æ¡è½¨é“æ ·å¼ */
 ::-webkit-scrollbar-track {
     background: transparent;
-    /* 轨道的背景颜色 */
+    /* è½¨é“çš„èƒŒæ™¯é¢œè‰² */
     border-radius: 10px
-        /* 轨道的圆角 */
+        /* è½¨é“çš„åœ†è§’ */
 }
 
-/* 滚动条滑块样式 */
+/* æ»šåŠ¨æ¡æ»‘å—æ ·å¼ */
 ::-webkit-scrollbar-thumb {
     background: hsla(0, 0%, 83.1%, .25098039215686274);
     border-radius: 10px
-        /* 滑块的圆角 */
+        /* æ»‘å—çš„åœ†è§’ */
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -34445,7 +34445,7 @@ body {
     font-size: 14px
 }
 
-/*每个页面公共css */
+/*æ¯ä¸ªé¡µé¢å…¬å…±css */
 
 .uni-border {
     border: 1px #f0f0f0 solid
@@ -37582,21 +37582,21 @@ body {
 ::-webkit-scrollbar-track {
     background: transparent;
     border-radius: 10px
-        /* 轨道的圆角 */
+        /* è½¨é“çš„åœ†è§’ */
 }
 
-/* 滚动条滑块样式 */
+/* æ»šåŠ¨æ¡æ»‘å—æ ·å¼ */
 ::-webkit-scrollbar-thumb {
     background: hsla(0, 0%, 83.1%, .25098039215686274);
-    /* 滑块的背景颜色 */
+    /* æ»‘å—çš„èƒŒæ™¯é¢œè‰² */
     border-radius: 10px
-        /* 滑块的圆角 */
+        /* æ»‘å—çš„åœ†è§’ */
 }
 
-/* 当鼠标悬停在滑块上时的样式 */
+/* å½“é¼ æ ‡æ‚¬åœåœ¨æ»‘å—ä¸Šæ—¶çš„æ ·å¼ */
 ::-webkit-scrollbar-thumb:hover {
     background: hsla(0, 0%, 83.1%, .25098039215686274)
-        /* 悬停时滑块的背景颜色 */
+        /* æ‚¬åœæ—¶æ»‘å—çš„èƒŒæ™¯é¢œè‰² */
 }
 
 .uni-app--showtabbar uni-page-wrapper {
@@ -44683,7 +44683,7 @@ body {
     left: 0;
     height: 100%;
     background-color: rgba(0, 128, 0, .2)
-        /* 买单深度条颜色 */
+        /* ä¹°å•æ·±åº¦æ¡é¢œè‰² */
         /* z-index: -1; */
 }
 
@@ -47949,7 +47949,7 @@ body {
 .uid[data-v-1011963f] {
     font-family: Montserrat;
     font-size: 13px;
-    color: hsla(0, 0%, 100%, .5019607843137255)
+    color: hsla(0, 0%, 100%);
 }
 
 .time[data-v-1011963f] {
@@ -50856,7 +50856,7 @@ body {
     cursor: default
 }
 
-/* picker 弹出层通用的指示小三角 */
+/* picker å¼¹å‡ºå±‚é€šç”¨çš„æŒ‡ç¤ºå°ä¸‰è§’ */
 .uni-popper__arrow_bottom[data-v-7442d4f6],
 .uni-popper__arrow_bottom[data-v-7442d4f6]::after,
 .uni-popper__arrow_top[data-v-7442d4f6],
@@ -51335,7 +51335,7 @@ body {
     font-size: 14px
 }
 
-/*每个页面公共css */
+/*æ¯ä¸ªé¡µé¢å…¬å…±css */
 
 .uni-border {
     border: 1px #f0f0f0 solid
@@ -54466,30 +54466,30 @@ body {
 
 ::-webkit-scrollbar {
     width: 5px;
-    /* 控制滚动条的宽度 */
+    /* æŽ§åˆ¶æ»šåŠ¨æ¡çš„å®½åº¦ */
     height: 5px
 }
 
-/* 滚动条轨道样式 */
+/* æ»šåŠ¨æ¡è½¨é“æ ·å¼ */
 ::-webkit-scrollbar-track {
     background: transparent;
-    /* 轨道的背景颜色 */
+    /* è½¨é“çš„èƒŒæ™¯é¢œè‰² */
     border-radius: 10px
-        /* 轨道的圆角 */
+        /* è½¨é“çš„åœ†è§’ */
 }
 
-/* 滚动条滑块样式 */
+/* æ»šåŠ¨æ¡æ»‘å—æ ·å¼ */
 ::-webkit-scrollbar-thumb {
     background: hsla(0, 0%, 83.1%, .25098039215686274);
-    /* 滑块的背景颜色 */
+    /* æ»‘å—çš„èƒŒæ™¯é¢œè‰² */
     border-radius: 10px
-        /* 滑块的圆角 */
+        /* æ»‘å—çš„åœ†è§’ */
 }
 
-/* 当鼠标悬停在滑块上时的样式 */
+/* å½“é¼ æ ‡æ‚¬åœåœ¨æ»‘å—ä¸Šæ—¶çš„æ ·å¼ */
 ::-webkit-scrollbar-thumb:hover {
     background: hsla(0, 0%, 83.1%, .25098039215686274)
-        /* 悬停时滑块的背景颜色 */
+        /* æ‚¬åœæ—¶æ»‘å—çš„èƒŒæ™¯é¢œè‰² */
 }
 
 
@@ -58436,7 +58436,7 @@ body {
     font-size: 14px
 }
 
-/*每个页面公共css */
+/*æ¯ä¸ªé¡µé¢å…¬å…±css */
 
 .uni-border {
     border: 1px #f0f0f0 solid
@@ -66287,7 +66287,7 @@ white-space: nowrap; */
     font-size: 14px
 }
 
-/*每个页面公共css */
+/*æ¯ä¸ªé¡µé¢å…¬å…±css */
 
 .uni-border {
     border: 1px #f0f0f0 solid
@@ -69418,30 +69418,30 @@ body {
 
 ::-webkit-scrollbar {
     width: 3px;
-    /* 控制滚动条的宽度 */
+    /* æŽ§åˆ¶æ»šåŠ¨æ¡çš„å®½åº¦ */
     height: 3px
 }
 
-/* 滚动条轨道样式 */
+/* æ»šåŠ¨æ¡è½¨é“æ ·å¼ */
 ::-webkit-scrollbar-track {
     background: transparent;
-    /* 轨道的背景颜色 */
+    /* è½¨é“çš„èƒŒæ™¯é¢œè‰² */
     border-radius: 10px
-        /* 轨道的圆角 */
+        /* è½¨é“çš„åœ†è§’ */
 }
 
-/* 滚动条滑块样式 */
+/* æ»šåŠ¨æ¡æ»‘å—æ ·å¼ */
 ::-webkit-scrollbar-thumb {
     background: hsla(0, 0%, 83.1%, .25098039215686274);
-    /* 滑块的背景颜色 */
+    /* æ»‘å—çš„èƒŒæ™¯é¢œè‰² */
     border-radius: 10px
-        /* 滑块的圆角 */
+        /* æ»‘å—çš„åœ†è§’ */
 }
 
-/* 当鼠标悬停在滑块上时的样式 */
+/* å½“é¼ æ ‡æ‚¬åœåœ¨æ»‘å—ä¸Šæ—¶çš„æ ·å¼ */
 ::-webkit-scrollbar-thumb:hover {
     background: hsla(0, 0%, 83.1%, .25098039215686274)
-        /* 悬停时滑块的背景颜色 */
+        /* æ‚¬åœæ—¶æ»‘å—çš„èƒŒæ™¯é¢œè‰² */
 }
 
 .uni-app--showtabbar uni-page-wrapper {
@@ -74870,7 +74870,7 @@ body {
 .uni-datetime-picker-sign[data-v-c657e374] {
     position: absolute;
     top: 53px;
-    /* 减掉 10px 的元素高度，兼容nvue */
+    /* å‡æŽ‰ 10px çš„å…ƒç´ é«˜åº¦ï¼Œå…¼å®¹nvue */
     color: #999
 }
 
@@ -75388,7 +75388,7 @@ body {
     vertical-align: middle
 }
 
-/* 添加时间 */
+/* æ·»åŠ æ—¶é—´ */
 .popup-x-header[data-v-5434dfc4] {
     display: flex;
     flex-direction: row
@@ -75451,7 +75451,7 @@ body {
     margin-right: 50px
 }
 
-/* picker 弹出层通用的指示小三角, todo：扩展至上下左右方向定位 */
+/* picker å¼¹å‡ºå±‚é€šç”¨çš„æŒ‡ç¤ºå°ä¸‰è§’, todoï¼šæ‰©å±•è‡³ä¸Šä¸‹å·¦å³æ–¹å‘å®šä½ */
 .uni-popper__arrow[data-v-5434dfc4],
 .uni-popper__arrow[data-v-5434dfc4]::after {
     position: absolute;
@@ -75662,7 +75662,7 @@ body {
     cursor: default
 }
 
-/* picker 弹出层通用的指示小三角 */
+/* picker å¼¹å‡ºå±‚é€šç”¨çš„æŒ‡ç¤ºå°ä¸‰è§’ */
 .uni-popper__arrow_bottom[data-v-7442d4f6],
 .uni-popper__arrow_bottom[data-v-7442d4f6]::after,
 .uni-popper__arrow_top[data-v-7442d4f6],
@@ -76672,7 +76672,7 @@ body {
 }
 
 .right .value[data-v-10f20c32] {
-    color: #00a99b;
+    color: #ffc600;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
@@ -76684,7 +76684,7 @@ body {
     font-size: 12px;
     line-height: 16px;
     font-family: Montserrat;
-    color: hsla(0, 0%, 100%, .5019607843137255)
+    color: hsla(0, 0%, 100%);
 }
 
 .ava-box[data-v-10f20c32] {
@@ -76759,7 +76759,7 @@ body {
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
-    color: hsla(0, 0%, 100%, .5019607843137255)
+    color: hsla(0, 0%, 100%);
 }
 
 .layout .value[data-v-10f20c32] {

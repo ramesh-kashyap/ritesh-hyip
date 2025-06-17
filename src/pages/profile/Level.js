@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 
 const Level = () => {
-  const [activeTab, setActiveTab] = useState("running");
 
   const location = useLocation();
   const [level, setLevel] = useState([]);
@@ -78,6 +77,26 @@ const Level = () => {
   };
 
 
+  const levelFromUrl = new URLSearchParams(window.location.search).get('selected_level') || '1';
+    const [activeTab, setActiveTab] = useState('Lvl'+levelFromUrl);
+  
+    const tabs = ['Lvl1', 'Lvl2', 'Lvl3'];
+const tabHeaderStyle = {
+    display: 'flex',
+    borderBottom: '1px solid #2c2c2c',
+    marginBottom: '12px',
+  };
+
+
+   const tabStyle = (isActive) => ({
+    padding: '10px 16px',
+    cursor: 'pointer',
+    color: isActive ? '#fff' : '#888',
+    fontWeight: isActive ? 'bold' : 'normal',
+    borderBottom: isActive ? '2px solid rgb(255 198 0)' : 'none',
+  });
+
+
   const handleLevelChange = (e) => {
     setSelectedLevel(e.target.value);
     setPage(1); // Reset page on level change
@@ -101,7 +120,7 @@ const Level = () => {
                   <uni-view data-v-636c600c="" data-v-1011963f="" class="uni-row" style={{ marginLeft: '0px', marginRight: '0px' }}>
                     <uni-view data-v-35b9a113="" data-v-1011963f="" class="uni-col uni-col-6" style={{ paddingLeft: '0px', paddingRight: '0px' }}>
 
-                      <Link to="/team">
+                      <Link to="/Team">
                         <uni-view data-v-1011963f="" class="back"><img data-v-1011963f="" src="/static/img/back.png" alt="" style={{ width: '35px',filter: 'brightness(1) invert(0)' }} /></uni-view>
                       </Link>
 
@@ -113,9 +132,27 @@ const Level = () => {
                   </uni-view>
                 </uni-view>
 
+                  <div style={tabHeaderStyle}>
+                    {tabs.map((tab) => (
+                      <div
+                        key={tab}
+                        style={tabStyle(tab === activeTab)}
+                         onClick={() => {
+                        setActiveTab(tab);
+                        const url = new URL(window.location);
+                        const levelNumber = tab.slice(-1); // Gets '1', '2', or '3'
+                        url.searchParams.set('selected_level', levelNumber);
+                       window.location.href = url.toString(); // 🔁 forces full reload
+                      }}
+                      >
+                        {tab}
+                      </div>
+                    ))}
+                  </div>
 
 
-                {activeTab === "running" ? (
+
+
                   <uni-view data-v-b7dd60dc="" class="history-box">
                     {users.map((user, index) => (
 
@@ -161,18 +198,7 @@ const Level = () => {
                     ))}
 
                   </uni-view>
-                ) : (
-                  <uni-view data-v-7cdca4f6="" class="history-box">
-                    <uni-view data-v-7cdca4f6="" class="nodata">
-                      <img
-                        data-v-7cdca4f6=""
-                        src="/static/img/nodata.png"
-                        alt=""
-                      />
-                      No Data
-                    </uni-view>
-                  </uni-view>
-                )}
+               
 
               </uni-view>
             </uni-page-body>

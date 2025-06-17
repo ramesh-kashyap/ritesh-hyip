@@ -49,6 +49,7 @@ import Vip from "./pages/team/vip";
 import Trade from "./pages/team/Trade";
 import Bil from "./pages/team/bill";
 import UserInfo from "./pages/profile/UserInfo";
+import Terms from "./pages/profile/Terms";
 
 import ChangeMail from "./pages/profile/ChangeMail";
   
@@ -131,7 +132,8 @@ function AppContent() {
                     <Route path="/server-commission" element={<ProtectedRoute><ServerCommission /></ProtectedRoute>} />
                     <Route path="/payment-password" element={<ProtectedRoute><PaymentPassword /></ProtectedRoute>} />
                     <Route path="/level" element={<ProtectedRoute><Level/></ProtectedRoute>}/>
-                    <Route path="/team" element={<ProtectedRoute><Team /></ProtectedRoute>} />
+                    <Route path="/Team" element={<ProtectedRoute><Team /></ProtectedRoute>} />
+                    <Route path="/terms" element={<ProtectedRoute><Terms /></ProtectedRoute>} />
 
                     <Route path="/quality" element={<ProtectedRoute><Quality/></ProtectedRoute>} />
                     <Route path="/vip" element={<ProtectedRoute><Vip/></ProtectedRoute>} />
