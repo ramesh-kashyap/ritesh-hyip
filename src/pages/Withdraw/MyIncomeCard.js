@@ -1,6 +1,7 @@
 import React from 'react';
-
+import { useNavigate, Link } from "react-router-dom";
 const MyIncomeCard = () => {
+    const navigate = useNavigate();
   const cardStyle = {
     background: 'linear-gradient(135deg, rgb(78, 78, 81), rgb(27, 27, 30))',
     borderRadius: '12px',
@@ -42,6 +43,7 @@ const MyIncomeCard = () => {
     borderTop: '1px dashed #333',
     margin: '12px 0',
   };
+  
 
   return (
     <div style={cardStyle}>
@@ -49,7 +51,6 @@ const MyIncomeCard = () => {
         <span>My Income</span>
         <span style={{ color: 'rgb(206 171 53)', fontSize: '18px' }}>↗</span>
       </div>
-
       <div style={sectionStyle}>
         <div>
           <div style={labelStyle}>Total Income</div>

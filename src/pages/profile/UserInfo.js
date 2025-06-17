@@ -4,32 +4,47 @@ import { useNavigate, useLocation, Link } from 'react-router-dom';
 import Api from "../../Requests/Api";
 import { Toaster, toast } from 'react-hot-toast';
 const UserInfo = () => {
-    const [Notice, setNotices] = useState([]);
-    const [error, setError] = useState("");
-    useEffect(() => {
-        fetchUsers();
-    }, []);
+   const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
+  const [sponsor, setSponsor] = useState("");
+  const [error, setError] = useState("");
+        useEffect(() => {
+    fetchUsers();
+  }, []);
 
-    const fetchUsers = async () => {
-        try {
-            const response = await Api.get("/fetchnotice");
-            if (response.data && response.data.success) {
-                console.log(response.data);
-                setNotices(response.data.notices);
-            } else {
-                setNotices([]);
-            }
+  const fetchUsers = async () => {
+    try {
+      const response = await Api.get("/user");
+      if (response.data ) {
+        const userData = response.data;
+        setName(userData.name || "");
+        setUsername(userData.username || "");
+        setSponsor(userData.sponsor || "");
+      }
+    } catch (err) {
+      setError(err.response?.data?.error || "Error fetching data");
+    }
+  };
 
-            console.log("Fetched:", response.data);
-        } catch (err) {
-            setError(err.response?.data?.error || "Error fetching history");
-        }
-    };
+  const handleSave = async () => {
+    try {
+      const response = await Api.post("/changedetails", {
+        name,
+        username,
+        sponsor,
+      });
+      if (response.data.success) {
+        toast.success(response.data.message);
+      } else {
+        toast.error("Failed to update user info");
+      }
+    } catch (err) {
+      toast.error("Server error");
+    }
+  };
 
-     const containerStyle = {
-    // backgroundColor: '#0e0e0e',
+const containerStyle = {
     minHeight: '100vh',
-    // padding: '20px',
     fontFamily: 'Arial, sans-serif',
     color: '#fff',
   };
@@ -54,17 +69,6 @@ const UserInfo = () => {
   const logoStyle = {
     width: '60px',
     height: '60px',
-  };
-
-  const cameraIconStyle = {
-    position: 'absolute',
-    bottom: '8px',
-    right: 'calc(50% - 50px)',
-    backgroundColor: '#222',
-    borderRadius: '50%',
-    padding: '6px',
-    fontSize: '12px',
-    border: '2px solid #000',
   };
 
   const formCardStyle = {
@@ -95,6 +99,16 @@ const UserInfo = () => {
     color: '#fff',
   };
 
+  const inputStyle = {
+    background: 'transparent',
+    border: 'none',
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: '16px',
+    flex: 1,
+    outline: 'none',
+  };
+
   const copyIconStyle = {
     width: '16px',
     height: '16px',
@@ -117,7 +131,8 @@ const UserInfo = () => {
 
     return (
         <div class="uni-body pages-index-message">
-            <uni-app class="uni-app--maxwidth">
+          <Toaster position="top-center" reverseOrder={false} />
+            <uni-app class="uni-app--maxwidth">              
                 <uni-page data-page="pages/index/message">
                     <uni-page-wrapper>
                         <uni-page-body>
@@ -147,55 +162,53 @@ const UserInfo = () => {
                                 </uni-view> */}
 
                                  <div style={containerStyle}>
-      {/* Avatar */}
-      <div style={avatarWrapper}>
-        <div style={avatarStyle}>
-          <img
-            src="fav.png"
-            alt="Profile"
-            style={logoStyle}
-          />
-        </div>
-        {/* <div style={cameraIconStyle}>📷</div> */}
-      </div>
+            <div style={avatarWrapper}>
+              <div style={avatarStyle}>
+                <img src="fav.png" alt="Profile" style={logoStyle} />
+              </div>
+            </div>
 
-      {/* Info Card */}
-      <div style={formCardStyle}>
-        <div style={fieldStyle}>
-          <div style={labelStyle}>Nickname</div>
-          <div style={rowStyle}>
-            <span>LUMEX-106965</span>
+            <div style={formCardStyle}>
+              <div style={fieldStyle}>
+                <div style={labelStyle}>Name</div>
+                <div style={rowStyle}>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    style={inputStyle}
+                  />
+                </div>
+              </div>
+
+              <div style={fieldStyle}>
+                <div style={labelStyle}>Username</div>
+                <div style={rowStyle}>
+                  <input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    style={inputStyle}
+                  />
+                </div>
+              </div>
+
+              <div style={fieldStyle}>
+                <div style={labelStyle}>Sponsor</div>
+                <div style={rowStyle}>
+                  <input
+                    type="text"
+                    value={sponsor}
+                    onChange={(e) => setSponsor(e.target.value)}
+                    style={inputStyle}
+                  />
+                  <span style={copyIconStyle}></span>
+                </div>
+              </div>
+            </div>
+
+            <button style={saveButtonStyle} onClick={handleSave}>Save</button>
           </div>
-        </div>
-
-        <div style={fieldStyle}>
-          <div style={labelStyle}>Member Level</div>
-          <div style={rowStyle}>
-            <span>G0</span>
-          </div>
-        </div>
-
-        <div style={fieldStyle}>
-          <div style={labelStyle}>Mailbox</div>
-          <div style={rowStyle}>
-            <span>Rajronyks@Gmail.Com</span>
-            <span style={copyIconStyle}></span>
-          </div>
-        </div>
-
-        <div style={fieldStyle}>
-          <div style={labelStyle}>Mobile Phone Number</div>
-          <div style={rowStyle}>
-            <span>7988886345</span>
-            <span style={copyIconStyle}></span>
-          </div>
-        </div>
-      </div>
-
-      {/* Save Button */}
-      <button style={saveButtonStyle}>Save</button>
-    </div>
-
                             </uni-view>
                         </uni-page-body>
                     </uni-page-wrapper>

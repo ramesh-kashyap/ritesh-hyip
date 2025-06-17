@@ -119,7 +119,7 @@ const NodeDetails = () => {
                 <br></br>
                 <uni-view data-v-3dcfa33c="" class="two-group">
                   <uni-view data-v-3dcfa33c="" class="item">                    
-                    {/* <Link to="/server-commission" style={{ textDecorationLine: 'none',filter:'' }}> */}
+                    {/* <Link to="/transaction" style={{ textDecorationLine: 'none',filter:'' }}> */}
                     <uni-view data-v-3dcfa33c="" class="title">Team Income</uni-view>
                     <uni-view data-v-3dcfa33c="" translate="no" class="value"><img data-v-3dcfa33c="" src="/static/img/dollar.png" alt="" />$ {serverc}</uni-view>
                     {/* </Link> */}

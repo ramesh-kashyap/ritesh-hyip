@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
 const FeatureIconsBar = () => {
+  const navigate = useNavigate();
+
   const containerStyle = {
     background: 'linear-gradient(135deg, rgb(78, 78, 81), rgb(27, 27, 30))',
     borderRadius: '16px',
@@ -12,8 +15,8 @@ const FeatureIconsBar = () => {
     maxWidth: '700px',
     margin: 'auto',
     color: '#fff',
-    marginTop:'10px',
-    border:'1px solid #534e4e'
+    marginTop: '10px',
+    border: '1px solid #534e4e'
   };
 
   const itemStyle = {
@@ -22,6 +25,7 @@ const FeatureIconsBar = () => {
     alignItems: 'center',
     textAlign: 'center',
     fontSize: '13px',
+    cursor: 'pointer',
   };
 
   const iconWrapperStyle = {
@@ -34,7 +38,6 @@ const FeatureIconsBar = () => {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    cursor:'pointer'
   };
 
   const iconImgStyle = {
@@ -46,25 +49,29 @@ const FeatureIconsBar = () => {
     {
       name: 'My Income',
       icon: '/static/img/icons8-income-100.png',
+      onClick: () => navigate('/transaction')
     },
     {
-      name: 'About Us',
+      name: 'Upgrade',
       icon: '/static/img/icons8-book-100.png',
+      onClick: () => navigate('/vip')
     },
     {
       name: 'Terms Of Use',
       icon: '/static/img/icons8-copy-96.png',
+      onClick: () => navigate('/terms')
     },
     {
       name: 'Record',
       icon: '/static/img/icons8-order-100.png',
+      onClick: () => navigate('/bill')
     },
   ];
 
   return (
     <div style={containerStyle}>
       {features.map((item, index) => (
-        <div key={index} style={itemStyle}>
+        <div key={index} style={itemStyle} onClick={item.onClick}>
           <div style={iconWrapperStyle}>
             <img src={item.icon} alt={item.name} style={iconImgStyle} />
           </div>
