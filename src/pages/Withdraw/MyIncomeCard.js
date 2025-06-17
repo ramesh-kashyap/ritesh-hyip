@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from "react-router-dom";
+import Api from '../../Requests/Api';
+
 const MyIncomeCard = () => {
     const navigate = useNavigate();
+    const [error, setError] = useState("");
+    const [incomes, setIncomes] = useState("");
+     useEffect(() => {
+            IncomeInfo();
+        }, []);
+
+
+           const IncomeInfo = async () => {
+          try {
+             const response = await Api.get("/incomeInfo");
+             if (response.data) {
+                console.log(response.data);
+                setIncomes(response.data.data);
+             }
+          } catch (error) {
+             console.error(error);
+             setError(error);
+          }
+       }
   const cardStyle = {
     background: 'linear-gradient(135deg, rgb(78, 78, 81), rgb(27, 27, 30))',
     borderRadius: '12px',
@@ -54,11 +75,11 @@ const MyIncomeCard = () => {
       <div style={sectionStyle}>
         <div>
           <div style={labelStyle}>Total Income</div>
-          <div style={valueStyle}>$5.16</div>
+          <div style={valueStyle}>${incomes.totalIncome ? incomes.totalIncome : 0}</div>
         </div>
         <div>
           <div style={labelStyle}>Today's Earnings</div>
-          <div style={valueStyle}>$0</div>
+          <div style={valueStyle}>${incomes.todayTotalIncome ? incomes.todayTotalIncome : 0}</div>
         </div>
       </div>
 
@@ -66,12 +87,12 @@ const MyIncomeCard = () => {
 
       <div style={sectionStyle}>
         <div>
-          <div style={labelStyle}>Trading Income</div>
-          <div style={valueStyle}>$5.16</div>
+          <div style={labelStyle}>Quantify Income</div>
+          <div style={valueStyle}>${incomes.tradingIncome ? incomes.tradingIncome : 0}</div>
         </div>
         <div>
-          <div style={labelStyle}>Today's Trading Income</div>
-          <div style={valueStyle}>$0</div>
+          <div style={labelStyle}>Today's Quantify Income</div>
+          <div style={valueStyle}>${incomes.todayTradingIncome ? incomes.todayTradingIncome : 0}</div>
         </div>
       </div>
 
@@ -80,11 +101,11 @@ const MyIncomeCard = () => {
       <div style={sectionStyle}>
         <div>
           <div style={labelStyle}> Community Income</div>
-          <div style={valueStyle}>$0</div>
+          <div style={valueStyle}>${incomes.teamIncome ? incomes.teamIncome : 0}</div>
         </div>
         <div>
           <div style={labelStyle}>Today's Community Income</div>
-          <div style={valueStyle}>$0</div>
+          <div style={valueStyle}>${incomes.totalTeamIncome ? incomes.totalTeamIncome : 0}</div>
         </div>
       </div>
     </div>

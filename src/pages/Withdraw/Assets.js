@@ -11,6 +11,7 @@ const Assets = () => {
     useEffect(() => {
         fetchUsers();
         withavail();
+        IncomeInfo();
     }, []);
 
     const fetchUsers = async () => {
@@ -34,6 +35,18 @@ const Assets = () => {
              const response = await Api.get("/availbal");
              if (response.data) {
                 setBalance(response.data.AvailBalance);
+             }
+          } catch (error) {
+             console.error(error);
+             setError(error);
+          }
+       }
+
+          const IncomeInfo = async () => {
+          try {
+             const response = await Api.get("/incomeInfo");
+             if (response.data) {
+                console.log(response.data);
              }
           } catch (error) {
              console.error(error);
