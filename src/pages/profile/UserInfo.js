@@ -17,9 +17,10 @@ const UserInfo = () => {
       const response = await Api.get("/user");
       if (response.data ) {
         const userData = response.data;
+        
         setName(userData.name || "");
         setUsername(userData.username || "");
-        setSponsor(userData.sponsor || "");
+        setSponsor(userData.email || "");
       }
     } catch (err) {
       setError(err.response?.data?.error || "Error fetching data");
@@ -194,7 +195,7 @@ const containerStyle = {
               </div>
 
               <div style={fieldStyle}>
-                <div style={labelStyle}>Sponsor</div>
+                <div style={labelStyle}>Email ID</div>
                 <div style={rowStyle}>
                   <input
                     type="text"
