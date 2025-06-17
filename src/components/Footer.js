@@ -46,35 +46,8 @@ export default function Footer() {
                 </div>
               </Link>
             </div>
-            <div class="uni-tabbar__item">
-            <Link to="/quality"style={{ textDecoration: "none", color: "inherit",cursor: "none" }}>
 
-                <div class="uni-tabbar__bd" style={{ height: '65px' }}>
-                  <div class="uni-tabbar__icon" style={{ width: '24px', height: '24px' }}>
-                    
-                  <img
-                     src={`/static/tabbar/${currentPath === '/quality' ? 'trade_active' : 'trade'}.png`}
-                      style={{
-                        filter: currentPath === '/quality' ? activeFilter : 'brightness(1) invert(0)',
-                      }}
-                      alt="Trade"
-                    />
-                    
-                    
-                    </div>
-                  <div  className="uni-tabbar__label"
-                    style={{
-                      color:
-                        currentPath === '/quality' ? '#ffc600' : '#fff',
-                      fontSize: '13px',
-                      lineHeight: 'normal',
-                      marginTop: '3px',
-                    }}>
-                    Quantify </div>
-                </div>
-                </Link>
-            </div>
-            <div class="uni-tabbar__item">
+              <div class="uni-tabbar__item">
             <Link to="/assets"style={{ textDecoration: "none", color: "inherit", cursor: "none" }}>
 
                 <div class="uni-tabbar__bd" style={{ height: '65px' }}>
@@ -103,6 +76,59 @@ export default function Footer() {
                 </div>
               </Link>
             </div>
+
+            <div class="uni-tabbar__item">
+            <Link to="/quality"style={{ textDecoration: "none", color: "inherit",cursor: "none" }}>
+
+                <div class="uni-tabbar__bd" style={{ height: '65px' }}>
+                  <div class="uni-tabbar__icon" style={{ width: '56px', height: '58px' }}>
+                    
+                  <img
+                     src={`/static/tabbar/${currentPath === '/quality' ? 'trade' : 'trade'}.png`}
+                      style={{
+                        filter: currentPath === '/quality' ? activeFilter : 'brightness(1) invert(0)',
+                      }}
+                      alt="Trade"
+                    />
+                    
+                    
+                    </div>
+                 
+                </div>
+                </Link>
+            </div>
+
+              <div class="uni-tabbar__item">
+            <Link to="/Team"style={{ textDecoration: "none", color: "inherit", cursor: "none" }}>
+
+                <div class="uni-tabbar__bd" style={{ height: '65px' }}>
+                  <div class="uni-tabbar__icon" style={{ width: '24px', height: '24px' }}>
+                    
+                    
+                  <img
+                         src={`/static/tabbar/${currentPath === '/Team' ? 'team_active' : 'team'}.png`}
+                      style={{
+                        filter: currentPath === '/assets' ? activeFilter : 'brightness(1) invert(0)',
+                      }}
+                      alt="Assets"
+                    />
+                    
+                    
+                    </div>
+                  <div  className="uni-tabbar__label"
+                    style={{
+                      color:
+                        currentPath === '/assets' ? '#ffc600' : '#fff',
+                      fontSize: '13px',
+                      lineHeight: 'normal',
+                      marginTop: '3px',
+                    }}>
+                    {t('Team')} </div>
+                </div>
+              </Link>
+            </div>
+
+          
             <div class="uni-tabbar__item">
             <Link to="/profile"style={{ textDecoration: "none", color: "inherit",cursor: "none" }}>
 
