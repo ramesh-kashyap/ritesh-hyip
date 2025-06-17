@@ -6,8 +6,6 @@ import { FaCopy } from 'react-icons/fa'; // Import the copy icon
 import { toast } from "react-toastify";
  
 const Refer = () => {
- 
- 
   const [inviteLink, setInviteLink] = useState(null);
   const [username, setUsername] = useState(null);
   const [serR, setServerR] = useState(null);
