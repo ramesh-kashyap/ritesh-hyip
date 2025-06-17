@@ -419,8 +419,8 @@ const [hoveredIndex, setHoveredIndex] = useState(null);
                   <div style={rowStyleTeam}>
                     <div style={columnStyle}>
                       <div >👥 Number Of People In The Community</div>
-                      <div style={valueStyleTeam}>3</div>
-                      <div style={smallTextStyle}>Today's New  <span style={{ color: 'rgb(255, 212, 41)' }}>+0</span></div>
+                      <div style={valueStyleTeam}>{total}</div>
+                      <div style={smallTextStyle}>Today's New  <span style={{ color: 'rgb(255, 212, 41)' }}>+{income?.data?.todaysUser}</span></div>
                     </div>
                     <div style={columnStyle}>
                       <div >💰 Today's Earnings</div>
