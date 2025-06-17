@@ -31,8 +31,6 @@ const UserInfo = () => {
     try {
       const response = await Api.post("/changedetails", {
         name,
-        username,
-        sponsor,
       });
       if (response.data.success) {
         toast.success(response.data.message);
