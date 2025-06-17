@@ -48,6 +48,7 @@ import Quality from "./pages/team/quality";
 import Vip from "./pages/team/vip";
 import Trade from "./pages/team/Trade";
 import Bil from "./pages/team/bill";
+import UserInfo from "./pages/profile/UserInfo";
 
 import ChangeMail from "./pages/profile/ChangeMail";
   
@@ -135,6 +136,7 @@ function AppContent() {
                     <Route path="/quality" element={<ProtectedRoute><Quality/></ProtectedRoute>} />
                     <Route path="/vip" element={<ProtectedRoute><Vip/></ProtectedRoute>} />
                     <Route path="/bill" element={<ProtectedRoute><Bil/></ProtectedRoute>} />
+                    <Route path="/userinfo" element={<ProtectedRoute><UserInfo/></ProtectedRoute>} />
 
                     <Route path="/withdraw-req" element={<ProtectedRoute><WithdrawReq /></ProtectedRoute>} />
                     <Route path="/deposit-history" element={<ProtectedRoute><History /></ProtectedRoute>} />
